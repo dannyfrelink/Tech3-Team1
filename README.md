@@ -103,4 +103,4 @@ Tristan Varewijck - tristan.varewijck@gmail.com - https://github.com/TristanVare
 
 ## License
 
-Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/TristanVarewijck/Block-Tech/blob/master/LICENSE) for the full details.
+Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/TristanVarewijck/Block-Tech/blob/master/LICENSE) for the full details
