@@ -1,3 +1,4 @@
 # Tech3-Team1
 
-git push origin branchnaam
+## Werken met branches
+`git push origin branchnaam`
