@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![banner](https://github.com/TristanVarewijck/Block-Tech/blob/master/images/Banner%20GitHub%20READ.ME.png)
 
 ## ActiveTogether / Filter - Feature
@@ -84,6 +83,7 @@ These are the current visuals of the filter feature.
 ![filter ui](https://github.com/TristanVarewijck/Block-Tech/blob/master/images/design-filter.png)
 
 ## !mportant files
+
 Of course all files are important but you should at least have a look at these files if you are interested in this repo.
 Viewing these files will give you an idea of how this feature is built.
 
@@ -104,6 +104,3 @@ Tristan Varewijck - tristan.varewijck@gmail.com - https://github.com/TristanVare
 ## License
 
 Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/TristanVarewijck/Block-Tech/blob/master/LICENSE) for the full details.
-=======
-
->>>>>>> b917c353a1a30f1ebb245435c4d311889b360a88
