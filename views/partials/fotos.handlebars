@@ -1,0 +1,8 @@
+<section>
+		<img src="../uploads/{{photosDB.document.pfImage}}" alt="Profielfoto">
+	<div>
+		{{#each photosDB.document.extraImages}}
+			<img src="../uploads/{{this}}" alt="Extra foto">
+		{{/each}}
+	</div>
+</section>

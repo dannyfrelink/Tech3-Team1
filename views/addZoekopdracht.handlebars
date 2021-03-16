@@ -1,0 +1,106 @@
+<form class="zoekopdracht" action="/profiel/zoekopdracht" method="POST">
+	<div>
+		<label>Ik ben op zoek naar een:</label>
+		<div>
+
+			<input type="radio" id="man" name="geslacht" value="man">
+			<label for="man">Man</label>
+
+			<input type="radio" id="vrouw" name="geslacht" value="vrouw">
+			<label for="vrouw">Vrouw</label>
+			<div>
+				<input type="radio" id="geenVoorkeur" name="geslacht" value="man of vrouw">
+				<label for="geenVoorkeur">Geen voorkeur</label>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<label>Met deze nationaliteit:</label>
+		<div>
+			<select name="nation">
+				<option value="" hidden>Kies een land</option>
+				{{#each countries}}
+					<option value="{{this.name}}">{{this.name}}</option>
+				{{/each}}
+			</select>
+			<div>
+				<input type="checkbox" id="geenVoorkeur" name="nation" value="maakt niet uit">
+				<label for="geenVoorkeur">Geen voorkeur</label>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<label>Deze leeftijd:</label>
+		<div>
+			<select name="leeftijd">
+					<option selected disabled hidden>Kies een leeftijd</option>
+					<option value="16-22 jaar">16-22 jaar</option>
+					<option value="23-32 jaar">23-32 jaar</option>
+					<option value="33-40 jaar">33-40 jaar</option>
+					<option value="41-49 jaar">41-49 jaar</option>
+					<option value="50-59 jaar">50-59 jaar</option>
+					<option value="60+ jaar">60+ jaar</option>
+			</select>
+			<div>
+				<input type="checkbox" id="geenVoorkeur" name="leeftijd" value="alle leeftijden">
+				<label for="geenVoorkeur">Geen voorkeur</label>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<label>En deze interesses:</label>
+		<div>
+			<div>
+				<input type="checkbox" id="natuur" name="interesses" value="natuur">
+				<label for="natuur">Natuur</label>
+				<input type="checkbox" id="stad" name="interesses" value="stad">
+				<label for="stad">Stad</label>
+				<input type="checkbox" id="zon" name="interesses" value="zon">
+				<label for="zon">Zon</label>
+				<input type="checkbox" id="kou" name="interesses" value="kou">
+				<label for="kou">Kou</label>
+			</div>
+			<div>
+				<input type="checkbox" id="strand" name="interesses" value="strand">
+				<label for="strand">Strand</label>
+				<input type="checkbox" id="eten" name="interesses" value="eten">
+				<label for="eten">Eten</label>
+				<input type="checkbox" id="architectuur" name="interesses" value="architectuur">
+				<label for="architectuur">Architectuur</label>
+			</div>
+			<div>
+				<input type="checkbox" id="cultuur" name="interesses" value="cultuur">
+				<label for="cultuur">Cultuur</label>
+				<input type="checkbox" id="actief" name="interesses" value="actief">
+				<label for="actief">Actief</label>
+				<input type="checkbox" id="museum" name="interesses" value="museum">
+				<label for="museum">Museum</label>
+			</div>
+			<div>
+				<input type="checkbox" id="ontspanning" name="interesses" value="ontspanning">
+				<label for="ontspanning">Ontspanning</label>
+				<input type="checkbox" id="sport" name="interesses" value="sport">
+				<label for="sport">Sport</label>
+				<input type="checkbox" id="yoga" name="interesses" value="yoga">
+				<label for="yoga">Yoga</label>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<button><img src="images/pijl-volgende.png" alt="Volgende pagina"></button>
+	</div>
+</form>
+
+<footer>
+	<img src="images/footer/persoonsgegevens-groen.png" alt="Gegevens icoon groen">
+	<img src="images/footer/stip-groen.png" alt="Stip groen">
+	<img src="images/footer/fotos-groen.png" alt="Foto icoon groen">
+	<img src="images/footer/stip-groen.png" alt="Stip groen">
+	<img src="images/footer/zoekopdracht-wit.png" alt="Zoek icoon wit">
+	<img src="images/footer/stip-wit.png" alt="Stip wit">
+	<img src="images/footer/reizen-opacity.png" alt="Reis icoon doorzichtig">
+</footer>
