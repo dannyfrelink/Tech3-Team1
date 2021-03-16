@@ -84,7 +84,6 @@ These are the current visuals of the filter feature.
 ![filter ui](https://github.com/TristanVarewijck/Block-Tech/blob/master/images/design-filter.png)
 
 ## !mportant files
-
 Of course all files are important but you should at least have a look at these files if you are interested in this repo.
 Viewing these files will give you an idea of how this feature is built.
 
