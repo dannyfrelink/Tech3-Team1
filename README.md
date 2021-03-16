@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![banner](https://github.com/TristanVarewijck/Block-Tech/blob/master/images/Banner%20GitHub%20READ.ME.png)
 
 ## ActiveTogether / Filter - Feature
@@ -104,3 +105,6 @@ Tristan Varewijck - tristan.varewijck@gmail.com - https://github.com/TristanVare
 ## License
 
 Usage is provided under the [MIT License](https://github.com/git/git-scm.com/blob/master/MIT-LICENSE.txt) MIT. See [LICENSE](https://github.com/TristanVarewijck/Block-Tech/blob/master/LICENSE) for the full details.
+=======
+
+>>>>>>> b917c353a1a30f1ebb245435c4d311889b360a88
