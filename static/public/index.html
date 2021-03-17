@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="author" content="Daan Olff">
+
+  <title>Matching App</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <p id="media-help">Bekijk deze applicatie op mobiel formaat.</p>
+
+  <header>
+    <h1>LetsPlay</h1>
+    <button id="filter">
+      <i class="fas fa-filter"></i>
+    </button>
+  </header>
+  
+  <main>
+    <section id="results"></section>
+      <article>
+        <figure id="slideshow">
+
+          <nav id="jump-links">
+            <ul>
+              <li><a href="#profile-1">.</a></li>
+              <li><a href="#profile-2">.</a></li>
+              <li><a href="#profile-3">.</a></li>
+            </ul>
+          </nav>          
+
+          <img id="profile-1" class="profile" src="img/profile-1.jpeg" alt="A profile picture">
+          <img id="profile-2" class="profile" src="img/profile-2.jpeg" alt="A profile picture">
+          <img id="profile-3" class="profile" src="img/profile-3.jpeg" alt="A profile picture">
+          
+          <figcaption id="details">
+            <h2>Sarah, 21</h2>
+            <h3>Klimmen, voetbal</h3>
+          </figcaption>
+        
+        </figure>
+      </article>
+      <nav id="vote">
+    
+        <button id="dislike">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <button id="like">
+          <i class="fas fa-heart"></i>
+        </button>
+
+        <button id="rewind">
+          <i class="fas fa-undo-alt"></i>
+        </button>
+
+      </nav>
+    </section>
+  </main>
+
+  <footer>
+    <nav id="menu">
+      <ul>
+
+        <li>
+          <button class="menu-button active-page">
+            <i class="fab fa-hotjar"></i>
+          </button>
+        </li>
+        <li>
+          <button class="menu-button">
+            <i class="fas fa-comments"></i>
+          </button>
+        </li>
+        <li>
+          <button class="menu-button">
+            <i class="fas fa-user"></i>
+          </button>
+        </li>
+
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+</html>
