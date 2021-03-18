@@ -1,0 +1,22 @@
+{
+  "name": "tech3-team1",
+  "version": "1.0.0",
+  "description": "VOOR BRANCH mandemt",
+  "main": "index.js",
+  "scripts": {
+    "start": " nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannyfrelink/Tech3-Team1.git"
+  },
+  "keywords": [
+    "matching"
+  ],
+  "author": "mandemt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannyfrelink/Tech3-Team1/issues"
+  },
+  "homepage": "https://github.com/dannyfrelink/Tech3-Team1#readme"
+}

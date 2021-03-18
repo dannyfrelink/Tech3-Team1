@@ -1,0 +1,31 @@
+body{
+    font-family:Dosis;
+    width:100%;
+    margin:0; padding:0;
+    background-color:#E3F5FF;
+}
+
+header img{
+    width:100%;
+    height:100%;
+    
+    /* object-fit:fill; */
+}
+
+nav{
+    display:flex;
+    justify-content:space-around;
+    position:fixed;
+    width:100%;
+    background-color:#434343;
+    bottom:0;
+    padding:1em;
+}
+nav img{
+    width:7em;
+}
+h1{
+    width:100%;
+    text-align:center;
+    font-size:3em;
+}
