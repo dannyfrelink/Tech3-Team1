@@ -80,6 +80,7 @@ input:checked + .slider:before{
     transform: translateX(140px)
 }
 
+
 /*--- Text ----*/
 
 p{
