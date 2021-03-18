@@ -12,6 +12,9 @@ h2{
     font-size:2em;
 }
 
+/*---- Slider ----*/
+/*---- Bron: https://www.youtube.com/watch?v=uCjDIMADK0w ----*/
+
 .container{
     position:absolute;
     top:20%;
@@ -59,9 +62,21 @@ h2{
 }
 
 input:checked + .slider{
-    background-color: #5A7DEC;
+    background-color: #ccc;
 }
 
 input:checked + .slider:before{
     transform: translateX(140px)
+}
+
+/*---- people ---- */
+
+ul{
+    position:absolute;
+    top:30%;
+    left:50%;
+}
+
+ul li{
+    list-style-type: none;
 }
