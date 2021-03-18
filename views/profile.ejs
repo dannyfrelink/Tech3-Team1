@@ -3,84 +3,87 @@
     <head>
         <%- include('layout/head'); %>
     </head>
-    <body>
+    <body class="profile">
         <header>
             <!-- header.ejs hier -->
         </header>
         <h2>Your profile</h2>
 
-        <div>
-            <input type="file" name="image" value="image" accept="image/*" required>
-            <label for="image">
-                <p>+</p>
-            </label>
-            <label for="image">Upload photo</label>
-        </div>
+        <form action="">
+            <div>
+                <input type="file" id="image" name="image" value="image" accept="image/*" required>
+                <label for="image"><p>+</p></label>
+                <label for="image">Upload photo</label>
+            </div>
 
-        <div>
-            <label>Name</label>
-            <input type="text" name="name" placeholder="First name + Last name" required>
-        </div>
+            <div>
+                <label>Name</label>
+                <input type="text" id="name" name="name" placeholder="First name + Last name" required>
+            </div>
 
-        <div>
-            <label>Countries</label>
-            <select name="countries" required>
-                <option value="" hidden>Select your country</option>
-                <% countries.forEach(function(countries) { %>
-                    <option value="<%= countries.name %>">
-                        <%= countries.name %>
-                    </option>
-                <% }); %>
-            </select>
-        </div>
+            <div>
+                <label>Countries</label>
+                <select name="countries" required>
+                    <option value="" hidden>Select your country</option>
+                    <% countries.forEach(function(countries) { %>
+                        <option value="<%= countries.name %>">
+                            <%= countries.name %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
 
-        <div>
-            <label>Gender</label>
-            <select name="gender" required>
-                <option value="" hidden>Select your gender</option>
-                <option value="Man">Man</option>
-                <option value="Vrouw">Woman</option>
-                <option value="Other">Other</option>
-            </select>
-        </div>
+            <div>
+                <label>Gender</label>
+                <select name="gender" required>
+                    <option value="" hidden>Select your gender</option>
+                    <option value="Man">Man</option>
+                    <option value="Vrouw">Woman</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
 
-        <div>
-            <label>Date of birth</label>
-            <input type="date" name="date" value="date" placeholder="Select your birthday" required>
-        </div>
+            <div>
+                <label>Date of birth</label>
+                <input type="date" id="date" name="date" value="date" required>
+            </div>
 
-        <div>
-            <label>Favorite sport</label>
-            <select name="sports" required>
-                <option value="" hidden>Select your favorite sport</option>
-                <option value="American football">American Football</option>
-                <option value="Athletics">Athletics</option>
-                <option value="Badminton">Badminton</option>
-                <option value="Baseball">Baseball</option>
-                <option value="Basketball">Basketball</option>
-                <option value="Boxing">Boxing</option>
-                <option value="Cricket">Cricket</option>
-                <option value="Cycling">Cycling</option>
-                <option value="Golf">Golf</option>
-                <option value="Gymnastics">Gymnastics</option>
-                <option value="Handball">Handball</option>
-                <option value="Hockey">Hockey</option>
-                <option value="Ice Hockey">Ice Hockey</option>
-                <option value="Rugby">Rugby</option>
-                <option value="Snooker">Snooker</option>
-                <option value="Soccer">Soccer</option>
-                <option value="Swimming">Swimming</option>
-                <option value="Table tennis">Table Tennis</option>
-                <option value="Tennis">Tennis</option>
-                <option value="Volleyball">Volleyball</option>
+            <div>
+                <label>Favorite sport</label>
+                <select name="sports" required>
+                    <option value="" hidden>Select your favorite sport</option>
+                    <option value="American football">American Football</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Baseball">Baseball</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Boxing">Boxing</option>
+                    <option value="Cricket">Cricket</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Golf">Golf</option>
+                    <option value="Gymnastics">Gymnastics</option>
+                    <option value="Handball">Handball</option>
+                    <option value="Hockey">Hockey</option>
+                    <option value="Ice Hockey">Ice Hockey</option>
+                    <option value="Rugby">Rugby</option>
+                    <option value="Snooker">Snooker</option>
+                    <option value="Soccer">Soccer</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Table tennis">Table Tennis</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="Volleyball">Volleyball</option>
 
-            </select>
-        </div>
+                </select>
+            </div>
 
-        <div>
-            <label>Your interests</label>
-            <textarea name="interests" placeholder="Tell something about yourself..."></textarea>
-        </div>
+            <div>
+                <label>Your interests</label>
+                <textarea id="interests" name="interests" placeholder="Tell something about yourself..."></textarea>
+            </div>
+
+            <button>Make profile</button>
+
+        </form>
 
         <footer>
             <!-- footer.ejs hier -->
