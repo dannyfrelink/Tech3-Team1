@@ -6,6 +6,7 @@
 }
 
 /*--- Weird blue thing on top ---*/
+/*--- Bron: https://bennettfeely.com/clippy/ ---*/
 .blue-top{
     background-color: #5A7DEC;
     width:100%;
@@ -77,6 +78,13 @@ input:checked + .slider{
 
 input:checked + .slider:before{
     transform: translateX(140px)
+}
+
+p{
+    position:absolute;
+    left:35%;
+    top:25%;
+    z-index: 1;
 }
 
 /*---- people ---- */
