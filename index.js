@@ -20,7 +20,7 @@ MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
 	} else {
 		/* eslint-disable-next-line no-unused-vars */
 		db = client.db(process.env.DB_NAME);
-		console.log('Connectie gelukt');
+		console.log('Connection success');
 	}
 });
 
