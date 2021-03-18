@@ -1,0 +1,19 @@
+{
+  "name": "tech3-team1",
+  "version": "1.0.0",
+  "description": "package branch kath",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannyfrelink/Tech3-Team1.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dannyfrelink/Tech3-Team1/issues"
+  },
+  "homepage": "https://github.com/dannyfrelink/Tech3-Team1#readme"
+}
