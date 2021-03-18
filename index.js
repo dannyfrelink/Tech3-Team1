@@ -26,11 +26,11 @@ app.get('/', (req, res) => {
 
 app.get('/likes', async (req, res) => {
     let people = {}
-    people = await db.collection("profile").find({}).toArray();
+    people = await db.collection("profile").find({like:true}).toArray();
     res.render('like', {
       title:'Likes & Matches',
       results: people.length,
-      people: people
+      people
     });
 });
 

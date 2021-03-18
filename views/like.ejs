@@ -15,17 +15,15 @@
         </label>
     </div>
 
-    <p> <%= people %> People liked you</p>
+    <p> <%= results %> People liked you</p>
 
     <ul>
-        <li>
-            <img src="#">
-            Name
-        </li>
-        <li>
-            <img src="#" alt="">
-            Name
-        </li>
+        <% people.forEach(function(people) { %>
+            <li>
+                <img src="images/app/girl5.svg">
+                <%= people.name %>
+            </li>
+        <% }); %>
     </ul>
 </body>
 </html>
