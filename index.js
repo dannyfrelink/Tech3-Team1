@@ -25,11 +25,11 @@ MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
 });
 
 
-app.use(express.static('static/public'));
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/profiel', (req, res) => {
-	res.render('profiel');
+	res.render('profiel', {title: 'profiel'});
 });
 
 
