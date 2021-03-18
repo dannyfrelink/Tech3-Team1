@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/dannyfrelink/Tech3-Team1#readme",
   "dependencies": {
+    "countries-list": "^2.6.1",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",

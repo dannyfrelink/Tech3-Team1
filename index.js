@@ -3,6 +3,7 @@ const express = require('express');
 const ejs = require('ejs');
 const app = express();
 const port = 5555;
+const countriesList = require('countries-list');
 
 // const multer = require('multer');
 
@@ -24,19 +25,20 @@ MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
 	}
 });
 
+const countries = Object.values(countriesList.countries);
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.get('/profiel', (req, res) => {
-	res.render('profiel', {title: 'profiel'});
+app.get('/profile', (req, res) => {
+	res.render('profile', {title: 'profile', countries});
 });
 
 
 
 
 app.use(function (req, res) {
-	res.status(404).send('Sorry, deze pagina kon ik niet vinden.');
+	res.status(404).send('Sorry, could not find this page.');
 });
 
 app.listen(port, () => {
