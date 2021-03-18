@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/likes', (req, res) => {
-    res.render('like', {title:'hello'})
+    res.render('like', {title:'Likes & Matches'})
 });
 
 app.use(function (req, res, next) {
