@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="709" height="157" viewBox="0 0 709 157">
+  <g id="Group_3" data-name="Group 3" transform="translate(-1678 -1271)">
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="78.5" cy="78.5" r="78.5" transform="translate(1862 1271)" fill="#5a7dec"/>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="78.5" cy="78.5" r="78.5" transform="translate(1678 1271)" fill="#d3ddff"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" cx="78.5" cy="78.5" r="78.5" transform="translate(2046 1271)" fill="#f7faff"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" cx="78.5" cy="78.5" r="78.5" transform="translate(2230 1271)" fill="#434343"/>
+    <text id="_D3DDFF" data-name="#D3DDFF" transform="translate(1699 1335)" fill="#141414" font-size="25" font-family="HelveticaNeue, Helvetica Neue"><tspan x="-54.65" y="24">#D3DDFF</tspan></text>
+    <text id="_5A7DEC" data-name="#5A7DEC" transform="translate(1883 1335)" fill="#141414" font-size="25" font-family="HelveticaNeue, Helvetica Neue"><tspan x="-54.413" y="24">#5A7DEC</tspan></text>
+    <text id="_F7FAFF" data-name="#F7FAFF" transform="translate(2067 1335)" fill="#141414" font-size="25" font-family="HelveticaNeue, Helvetica Neue"><tspan x="-50.013" y="24">#F7FAFF</tspan></text>
+    <text id="_434343" data-name="#434343" transform="translate(2251 1335)" fill="#fff" font-size="25" font-family="HelveticaNeue, Helvetica Neue"><tspan x="-48.65" y="24">#434343</tspan></text>
+  </g>
+</svg>
