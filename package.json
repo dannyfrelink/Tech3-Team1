@@ -4,6 +4,7 @@
   "description": "package branch kath",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/dannyfrelink/Tech3-Team1/issues"
   },
-  "homepage": "https://github.com/dannyfrelink/Tech3-Team1#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7"
-  }
+  "homepage": "https://github.com/dannyfrelink/Tech3-Team1#readme"
 }
