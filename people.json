@@ -1,0 +1,25 @@
+[{
+    "name": "Thomas",
+    "sport": "Soccer",
+    "age": 18,
+    "like":false
+  },
+  {
+    "name": "Nina",
+    "sport": "Hockey",
+    "age": 17,
+    "like":true
+  },
+  {
+    "name": "Justin",
+    "sport": "Tennis",
+    "age": 20,
+    "like":false
+  },
+  {
+    "name": "Roy",
+    "sport": "Zwemmen",
+    "age": 21,
+    "like":true
+  }
+]

@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const dotenv = require('dotenv').config();
-const { Mongoclient } = require('mongodb');
+const { MongoClient } = require("mongodb");
 
 const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URI}`;
 
@@ -24,8 +24,14 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 });
 
-app.get('/likes', (req, res) => {
-    res.render('like', {title:'Likes & Matches'})
+app.get('/likes', async (req, res) => {
+    let people = {}
+    people = await db.collection("profile").find({}).toArray();
+    res.render('like', {
+      title:'Likes & Matches',
+      results: people.length,
+      people: people
+    });
 });
 
 app.use(function (req, res, next) {
