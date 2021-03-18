@@ -1,8 +1,8 @@
 const express = require('express');
-const app = express();
-const port = 6666;
 /* eslint-disable-next-line no-unused-vars */
 const ejs = require('ejs');
+const app = express();
+const port = 5555;
 
 // const multer = require('multer');
 
@@ -18,15 +18,19 @@ MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
 	if (err) {
 		console.log('MongoDB Error:' + err);
 	} else {
+		/* eslint-disable-next-line no-unused-vars */
 		db = client.db(process.env.DB_NAME);
 		console.log('Connectie gelukt');
 	}
 });
 
-app.set('view engine', 'ejs');
+
 app.use(express.static('static/public'));
+app.set('view engine', 'ejs');
 
-
+app.get('/profiel', (req, res) => {
+	res.render('profiel');
+});
 
 
 
