@@ -1,0 +1,449 @@
+/* 
+  css preset. 
+  Source: http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+
+/* fonts source: fonts.google.com */
+/* fonts
+font-family: 'Caveat', cursive;
+font-family: 'Lato', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+/* colors 
+blue = #00A8FF
+black = #1E272E
+rood = #F53B57
+*/
+
+/* standard mark-up */
+* {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+label {
+  font-family: "Poppins", sans-serif;
+}
+
+header h1 + h2 {
+  font-family: "Caveat", cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* navbar */
+body > nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin: 1em 0.5em 0 0;
+  font-size: 1.2em;
+}
+
+nav:first-of-type a {
+  position: absolute;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: #00a8ff;
+  border-radius: 30% 70% 100% 0% / 0% 0% 100% 100%;
+  font-size: 1em;
+}
+
+/* header*/
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  left: 15%;
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+
+header nav ul li:nth-of-type(2) {
+  background-color: #00a8ff;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+
+header h1 {
+  color: #00a8ff;
+  font-size: 1.8em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.2em;
+}
+
+/* search (input) */
+.search {
+  position: relative;
+  left: 15%;
+  margin-top: 2em;
+  display: flex;
+}
+
+.search input[type="text"] {
+  border-radius: 4px;
+  border: solid 0.5px #00a8ff;
+  background: #f9f9f9;
+  height: 2em;
+  width: 50%;
+  margin-right: 1em;
+  text-align: center;
+}
+
+/* filter button */
+.filter-button {
+  position: absolute;
+  color: #00a8ff;
+  background-color: white;
+  font-size: 1.8em;
+  border: none;
+  right: 20%;
+  top: 20%;
+}
+
+/* dynamic results (filter results text) */
+section:nth-of-type(2) {
+  margin-top: 1.5em;
+}
+
+.results {
+  position: fixed;
+  left: 15%;
+  font-weight: 500;
+  font-size: 1em;
+  color: #1e272e;
+  margin: 0 0 0.5em 0;
+}
+
+/* Groups Slider */
+section:nth-of-type(2) > ul {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding: 0em 1.5em 2em 1.5em;
+  width: fit-content;
+  margin-top: 1.5em;
+}
+
+section:nth-of-type(2) ul li {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/assets/card-background.jpg);
+    /* image source, pexels: https://www.pexels.com/nl-nl/foto/bladeren-op-bestrating-naast-hek-1645840/*/
+  background-size: cover;
+  width: 20em;
+  height: 28em;
+  border-radius: 10px;
+  color: white;
+  margin-left: 1.5em;
+}
+
+section:nth-of-type(2) ul li div {
+  margin: 2em 0 0 2em; 
+}
+
+section:nth-of-type(2) ul li div h2 {
+  margin: 2em 0 1.5em 0;
+  font-size: 1.4em;
+  max-width: 12em;
+  font-weight: 500;
+  line-height: 1.1em;
+}
+
+section:nth-of-type(2) ul li div p {
+  margin-bottom: 0.5em;
+}
+
+section:nth-of-type(2) ul li div p:last-of-type {
+  margin-bottom: 10em;
+}
+
+section:nth-of-type(2) ul li a {
+  border: none;
+  background-color: #f53b57;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.9em;
+  width: 40%;
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 2px;
+  margin-right: 0.5em;
+}
+
+section:nth-of-type(2) ul li a:last-of-type {
+  background-color: #1e272e;
+}
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* webkit for shadow source: https://html-css-js.com/css/generator/box-shadow/ */
+  -webkit-box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
+}
+
+footer a {
+  color: black;
+  font-size: 1.8em;
+  color: lightgray;
+  margin-top: 7px;
+}
+
+footer a:nth-of-type(2) {
+  color: #f53b57;
+  border-radius: 20px;
+}
+
+/* filter screen (filters) */
+.filters-hidden {
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  color: black;
+  transform: translateY(-100%);
+  transition: 1s;
+  overflow: hidden;
+}
+
+.filters-show {
+  transform: translateY(0%);
+}
+
+.filters-hidden nav ul {
+  margin-top: 2em;
+  margin-bottom: 2.5em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filters-hidden nav ul li button {
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.filter-hidden nav ul li:first-of-type button {
+  color: red;
+}
+
+.filters-hidden h2 {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* filter form (filter inputs) */
+.form {
+  margin-left: 2.5em;
+  width: 100%;
+}
+
+label {
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+  display: block;
+}
+
+.form input,
+select {
+  width: 25em;
+  height: 3em;
+  border: solid 1px #d6d6d6;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  display: block;
+}
+
+input[type="submit"] {
+  position: absolute;
+  top: 90%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border: none;
+  background-color: #f53b57;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  overflow: hidden;
+  vertical-align: center;
+}
+
+/* output for range input */
+/* output tag source: https://www.w3schools.com/tags/tag_output.asp
+output {
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+}
+
+span {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Annoying overflow */
+body {
+  overflow-x: hidden;
+}
+main {
+  overflow: hidden;
+}
+section:nth-of-type(2) {
+  overflow-y: hidden;
+}
