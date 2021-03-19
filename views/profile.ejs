@@ -8,7 +8,7 @@
             <!-- header.ejs hier -->
         </header>
         <h2>Your profile</h2>
-        <form action="/profile" method="POST">
+        <form action="/profile" method="POST" enctype="multipart/form-data">
             <div>
                 <input type="file" id="image" name="image" value="image" accept="image/*" required>
                 <label for="image"><p>+</p></label>
@@ -37,14 +37,14 @@
                 <select name="gender" required>
                     <option value="" hidden>Select your gender</option>
                     <option value="Man">Man</option>
-                    <option value="Vrouw">Woman</option>
+                    <option value="Woman">Woman</option>
                     <option value="Other">Other</option>
                 </select>
             </div>
 
             <div>
                 <label>Date of birth</label>
-                <input type="date" id="date" name="date" value="date" required>
+                <input type="date" id="date" name="date" required>
             </div>
 
             <div>
@@ -85,5 +85,6 @@
         <footer>
             <!-- footer.ejs hier -->
         </footer>
+        <script src="/js/script.js"></script>
     </body>
 </html>

@@ -8,23 +8,22 @@
             <!-- header.ejs hier -->
         </header>
         <h2>Your profile</h2>
-
-        <form action="/profile" method="POST">
+        <form class="profileAdded" action="/profile" method="POST" enctype="multipart/form-data">
             <div>
                 <input type="file" id="image" name="image" value="image" accept="image/*" required>
-                <label for="image"><p>+</p></label>
-                <label for="image">Upload photo</label>
+                <label for="image"><img src="<%- personalDB.document.image %>" alt="profielfoto"></label>
+                <label for="image">Change photo</label>
             </div>
 
             <div>
                 <label>Name</label>
-                <input type="text" id="name" name="name" placeholder="First name + Last name" required>
+                <input type="text" id="name" name="name" placeholder="<%- personalDB.document.name %>" required>
             </div>
 
             <div>
                 <label>Countries</label>
                 <select name="countries" required>
-                    <option value="" hidden>Select your country</option>
+                    <option value="<%- personalDB.document.countries %>"><%- personalDB.document.countries %></option>
                     <% countries.forEach(function(countries) { %>
                         <option value="<%= countries.name %>">
                             <%= countries.name %>
@@ -36,22 +35,22 @@
             <div>
                 <label>Gender</label>
                 <select name="gender" required>
-                    <option value="" hidden>Select your gender</option>
+                    <option value="<%- personalDB.document.gender %>"><%- personalDB.document.gender %></option>
                     <option value="Man">Man</option>
-                    <option value="Vrouw">Woman</option>
+                    <option value="Woman">Woman</option>
                     <option value="Other">Other</option>
                 </select>
             </div>
 
             <div>
                 <label>Date of birth</label>
-                <input type="date" id="date" name="date" value="date" required>
+                <input placeholder="<%- personalDB.document.birthdate %>" class="textbox-n" type="text" onfocus="(this.type='date')" id="date">
             </div>
 
             <div>
                 <label>Favorite sport</label>
                 <select name="sports" required>
-                    <option value="" hidden>Select your favorite sport</option>
+                    <option value="<%- personalDB.document.sports %>"><%- personalDB.document.sports %></option>
                     <option value="American football">American Football</option>
                     <option value="Athletics">Athletics</option>
                     <option value="Badminton">Badminton</option>
@@ -77,15 +76,15 @@
 
             <div>
                 <label>Your interests</label>
-                <textarea id="interests" name="interests" placeholder="Tell something about yourself..."></textarea>
+                <textarea id="interests" name="interests" placeholder="<%- personalDB.document.interests %>"></textarea>
             </div>
 
             <button>Make profile</button>
 
         </form>
-
         <footer>
             <!-- footer.ejs hier -->
         </footer>
+        <script src="/js/script.js"></script>
     </body>
 </html>
