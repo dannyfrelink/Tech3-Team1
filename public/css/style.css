@@ -35,16 +35,29 @@ body.profile {
     margin-bottom: 1em;
 }
 
-.profile form div:first-of-type label p {
+.profile form div:first-of-type label:first-of-type {
+    max-height: 4.925em;
+}
+
+.profile form div:first-of-type label p,
+.profile form div:first-of-type label img {
     background-color: white;
 	border: 1px solid black;
     border-radius: 0.25em;
-	width: 1.15em;
+    font-size: 3em;
 	height: 1.6em;
-	line-height: 1.7em;
-    padding-left: 0.45em;
-	font-size: 3em;
     margin: 0;
+}
+
+.profile form div:first-of-type label p {
+    width: 1.15em;
+    padding-left: 0.45em;
+    line-height: 1.7em;
+}
+
+.profile form div:first-of-type label img {
+    object-fit: cover;
+    width: 1.6em;
 }
 
 .profile form div:first-of-type label:nth-of-type(2) {
@@ -73,4 +86,8 @@ body.profile {
     margin: 2em 7.5vw;
     margin-left: 7.5vw;
     justify-content: center;
+}
+
+.profileAdded ::placeholder {
+    color: black;
 }
