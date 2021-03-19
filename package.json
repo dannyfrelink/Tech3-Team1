@@ -23,8 +23,10 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "filereader": "^0.10.3",
     "mongodb": "^3.6.5",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
