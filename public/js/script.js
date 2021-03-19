@@ -1,29 +1,5 @@
 /* eslint-disable no-undef */
 
-// const imageInput = document.querySelector('input[type="file"]');
-
-// imageInput.addEventListener('change', function (e) {
-// 	displayImage(e);
-// });
-
-// function displayImage(e) {
-// 	const labelElement = document.querySelector(`[for = "${e.target.id}"]`);
-
-// 	const fileReader = new FileReader();
-// 	fileReader.readAsDataURL(files);
-// 	fileReader.addEventListener('load', function () {
-// 		labelElement.innerHTML = `<img src="${this.result}" />`;
-// 	});
-
-	// e.target.addEventListener('click', function (e) {
-	// 	e.preventDefault();
-	// });
-// }
-
-
-
-
-
 const inputFile = document.querySelector('input[type="file"]');
 const imgPreview = document.querySelector('form div:first-of-type label:first-of-type');
 
