@@ -67,11 +67,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-// app.get('/profile', (req, res) => {
-// 	res.render('profile', {title: 'Profile', countries});
-// });
-
-
 app.post('/profile', upload.single('image'), async (req, res) => {
 	let personalDB;
 
@@ -96,7 +91,6 @@ app.get('/profile', async (req, res) => {
 		res.render('profileAdded', { title: 'Profile', personalDB, countries });
 	}
 	else {
-		console.log(personal.countDocuments());
 		res.render('profile', {title: 'Profile', countries});
 	}
 });
