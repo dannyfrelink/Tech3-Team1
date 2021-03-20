@@ -17,7 +17,7 @@
 
             <div>
                 <label>Name</label>
-                <input type="text" id="name" name="name" placeholder="<%- personalDB.document.name %>">
+                <input type="text" id="name" name="name" value="<%- personalDB.document.name %>">
             </div>
 
             <div>
@@ -44,7 +44,7 @@
 
             <div>
                 <label>Date of birth</label>
-                <input placeholder="<%- personalDB.document.birthdate %>" class="textbox-n" type="text" onfocus="(this.type='date')" id="date">
+                <input value="<%- personalDB.document.birthdate %>" type="text" onfocus="(this.type='date')" id="date">
             </div>
 
             <div>
@@ -76,7 +76,7 @@
 
             <div>
                 <label>Your interests</label>
-                <textarea id="interests" name="interests" placeholder="<%- personalDB.document.interests %>"></textarea>
+                <textarea id="interests" name="interests"><%- personalDB.document.interests %></textarea>
             </div>
 
             <button>Make profile</button>
