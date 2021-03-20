@@ -20,9 +20,15 @@ MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
 app.use(express.static('public'));
 app.set("view engine", "ejs");
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
+app.get('/', async (req, res) => {
+  let people = {}
+  people = await db.collection('profile').updateOne({"like":false}, {$set:{"like":true}})
+  res.render('explore', {
+    title:'Likes & Matches',
+    results: people.length,
+    people
+  });
+})
 
 app.get('/likes', async (req, res) => {
     let people = {}
