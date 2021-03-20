@@ -10,19 +10,19 @@
         <h2>Your profile</h2>
         <form class="profileAdded" action="/profile" method="POST" enctype="multipart/form-data">
             <div>
-                <input type="file" id="image" name="image" value="image" accept="image/*" required>
+                <input type="file" id="image" name="image" value="image" accept="image/*">
                 <label for="image"><img src="<%- personalDB.document.image %>" alt="profielfoto"></label>
                 <label for="image">Change photo</label>
             </div>
 
             <div>
                 <label>Name</label>
-                <input type="text" id="name" name="name" placeholder="<%- personalDB.document.name %>" required>
+                <input type="text" id="name" name="name" placeholder="<%- personalDB.document.name %>">
             </div>
 
             <div>
                 <label>Countries</label>
-                <select name="countries" required>
+                <select name="countries">
                     <option value="<%- personalDB.document.countries %>"><%- personalDB.document.countries %></option>
                     <% countries.forEach(function(countries) { %>
                         <option value="<%= countries.name %>">
@@ -34,7 +34,7 @@
 
             <div>
                 <label>Gender</label>
-                <select name="gender" required>
+                <select name="gender">
                     <option value="<%- personalDB.document.gender %>"><%- personalDB.document.gender %></option>
                     <option value="Man">Man</option>
                     <option value="Woman">Woman</option>
@@ -49,7 +49,7 @@
 
             <div>
                 <label>Favorite sport</label>
-                <select name="sports" required>
+                <select name="sports">
                     <option value="<%- personalDB.document.sports %>"><%- personalDB.document.sports %></option>
                     <option value="American football">American Football</option>
                     <option value="Athletics">Athletics</option>
