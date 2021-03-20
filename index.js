@@ -67,9 +67,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.get('/profile', (req, res) => {
-	res.render('profile', {title: 'Profile', countries});
-});
+// app.get('/profile', (req, res) => {
+// 	res.render('profile', {title: 'Profile', countries});
+// });
+
 
 app.post('/profile', upload.single('image'), async (req, res) => {
 	let personalDB;
@@ -88,8 +89,17 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 	res.render('profileAdded', { title: 'Profile', personalDB, countries });
 });
 
-
-
+app.get('/profile', async (req, res) => {
+	if(await personal.countDocuments() > 0) {
+		let personalDB;
+		personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+		res.render('profileAdded', { title: 'Profile', personalDB, countries });
+	}
+	else {
+		console.log(personal.countDocuments());
+		res.render('profile', {title: 'Profile', countries});
+	}
+});
 
 app.use(function (req, res) {
 	res.status(404).send('Sorry, could not find this page.');
