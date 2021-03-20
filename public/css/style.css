@@ -1,0 +1,242 @@
+/* 
+  css preset. 
+  Source: http://meyerweb.com/eric/tools/css/reset/ 
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* fonts source: fonts.google.com */
+/* fonts
+font-family: 'Dosis', sans-serif;
+font-family: 'Poppins', sans-serif;
+
+/* standard mark-up */
+
+a {
+  text-decoration: none;
+}
+
+/* filter screen (filters) */
+
+.filters-hidden {
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  color: black;
+  transform: translateY(0%);
+  transition: 1s;
+  overflow: hidden;
+}
+
+.filters-show {
+  transform: translateY(0%);
+}
+
+.filters-hidden nav ul {
+  margin-top: 2em;
+  margin-bottom: 2.5em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.filters-hidden nav ul li button {
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  background-color:#D3DDFF;
+  color: #5A7DEC;
+  font-weight: 600;
+}
+
+.filter-hidden nav ul li:first-of-type button {
+  color: red;
+}
+
+.filters-hidden h2 {
+  font-size: 2em;
+  font-weight: 500;
+  font-family:'Dosis', sans-serif;
+}
+
+/* filter form (filter inputs) */
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  font-family: "Poppins", sans-serif;
+  font-size: .9em;
+  font-weight: 400;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+  display: block;
+}
+
+.form input,
+select {
+  width: 25em;
+  height: 3em;
+  border: solid 1px #D3DDFF;
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+  display: block;
+}
+
+input[type="submit"] {
+  position: fixed;
+  top: 90%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border: none;
+  background-color: #FF6A6A;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+  width: 15em;
+}
+
+/* output for range input */
+/* output tag source: https://www.w3schools.com/tags/tag_output.asp
+output {
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+}
+
+span {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Annoying overflow */
+

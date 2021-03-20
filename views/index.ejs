@@ -1,0 +1,57 @@
+
+<%- include('includes/head'); %>
+<!-- filter page -->
+<div class="header-element"></div>
+<article class="filters-hidden">
+  <nav>
+    <ul>
+      <li>
+        <button class="close-filter">Close</button>
+      </li>
+      <li>
+        <h2>filters</h2>
+      </li>
+      <li>
+        <!-- Bron: reset te page, stackoverflow: https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click-->
+        <button onclick="window.location.href=window.location.href">Reset</button>
+      </li>
+    </ul>
+  </nav>
+  <!-- filter form (inputs)-->
+  <form class="form" action="/" method="POST">
+    <div>
+    <label for="sports">Favorite Sports</label>
+    <select id="sports" name="sports">
+      <option>all</option>
+      <option value="cycling">Cycling</option>
+      <option value="walking">Walking</option>
+      <option value="jogging">Jogging</option>
+      <option value="fishing">Fishing</option>
+    </select>
+    <label for="distance">Age (max)</label>
+    <!-- automatic value change, stackoverflow: https://stackoverflow.com/questions/44675522/get-the-text-value-of-a-select-created-dynamically-->
+    <input id="distance" type="range" name="distance" min="18" max="99" step="1" value="18" oninput="this.nextElementSibling.value = this.value">
+    <output>18</output>
+    <label for="attendence">Country</label>
+    <select id="attendence" name="attendence">
+      <option>all</option>
+      <option value="10">10 people</option>
+      <option value="20">20 people</option>
+      <option value="30">30 people</option>
+      <option value="40">40 or more people</option>
+    </select>
+    <label for="duration">Gender</label>
+    <select id="duration" name="duration">
+      <option>all</option>
+      <option value="1">1 hour</option>
+      <option value="2">2 hours</option>
+      <option value="3">3 hours</option>
+      <option value="4">4 hours or more</option>
+    </select>
+    <input type="submit" value="FILTER">
+    </div>
+  </form>
+</article>
+</body>
+
+   
