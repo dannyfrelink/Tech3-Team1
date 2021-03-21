@@ -13,3 +13,5 @@ app.get('/', (req,res)=>{
 app.listen(port,() =>{
     console.log('luistert op port: ${port}');
 })
+
+console.log('help')
