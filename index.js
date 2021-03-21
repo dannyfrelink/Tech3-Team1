@@ -20,7 +20,7 @@ MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
 app.use(express.static('public'));
 app.set("view engine", "ejs");
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
   // let like = {}
   // like = await db.collection('profile').find({}).toArray();
   // if (req.body.like != true){
