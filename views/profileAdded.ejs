@@ -4,9 +4,7 @@
         <%- include('layout/head'); %>
     </head>
     <body class="profile">
-        <header>
-            <!-- header.ejs hier -->
-        </header>
+        <%- include('layout/header'); %>
         <h2>Your profile</h2>
         <form class="profileAdded" action="/profile" method="POST" enctype="multipart/form-data">
             <div>
@@ -82,9 +80,7 @@
             <button>Make profile</button>
 
         </form>
-        <footer>
-            <!-- footer.ejs hier -->
-        </footer>
+        <%- include('layout/footer'); %>
         <script src="/js/script.js"></script>
     </body>
 </html>
