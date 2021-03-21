@@ -63,22 +63,8 @@ const upload = multer({
 	storage: storage
 });
 
-// const ejsHelper = ejs.create({
-// 	helpers: {
-// 		equals: (value1, value2) => { return value1 === value2; }
-// 	}
-// });
-
-app.locals.equals = function() {
-	(value1, value2) => { return value1 === value2; };
-};
-
-console.log(countries.continent);
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
-
-// app.engine('ejs', ejsHelper.engine);
 app.set('view engine', 'ejs');
 
 app.post('/profile', upload.single('image'), async (req, res) => {

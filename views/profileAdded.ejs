@@ -19,13 +19,15 @@
             </div>
 
             <div>
-                <label>Countries</label>
+                <label>Country</label>
                 <select name="countries">
                     <option value="<%- personalDB.document.countries %>"><%- personalDB.document.countries %></option>
                     <% countries.forEach(function(countries) { %>
+                        <% if(countries.continent === 'EU') { %>
                         <option value="<%= countries.name %>">
                             <%= countries.name %>
                         </option>
+                        <% }; %>
                     <% }); %>
                 </select>
             </div>
