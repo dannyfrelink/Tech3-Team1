@@ -1,17 +1,19 @@
 {
   "name": "tech3-team1",
   "version": "1.0.0",
-  "description": "VOOR BRANCH mandemt",
+  "description": "BRANCH van mandemt",
   "main": "index.js",
   "scripts": {
-    "start": " nodemon index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dannyfrelink/Tech3-Team1.git"
   },
   "keywords": [
-    "matching"
+    "match",
+    "sport",
+    "app"
   ],
   "author": "mandemt",
   "license": "MIT",
