@@ -100,8 +100,7 @@ h1{
     width: 70vw;
     font-size: 1.3em;
     height: 2.5em;
-    margin: 2em 7.5vw;
-    margin-left: 7.5vw;
+    margin: 2em 7.5vw 5em;
     justify-content: center;
 }
 
@@ -115,11 +114,11 @@ footer{
     position:fixed;
     left: 0;
     bottom:0;
-    background-color:#434343;
+    background-color:lightgray;
     width:100%;
-    padding:1em;
+    padding: 0.5em 0;
 }
 
 footer img{
-    height:7.5vh;
+    height: 2.5em;
 }

@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="38.815" height="38.815" viewBox="0 0 38.815 38.815">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #fff;
-      }
-    </style>
-  </defs>
-  <path id="Icon_ionic-md-person" data-name="Icon ionic-md-person" class="cls-1" d="M23.907,23.907a9.7,9.7,0,1,0-9.7-9.7A9.732,9.732,0,0,0,23.907,23.907Zm0,4.852c-6.428,0-19.407,3.275-19.407,9.7v4.852H43.315V38.463C43.315,32.034,30.336,28.759,23.907,28.759Z" transform="translate(-4.5 -4.5)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2m0 10c2.7 0 5.8 1.29 6 2H6c.23-.72 3.31-2 6-2m0-12C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
