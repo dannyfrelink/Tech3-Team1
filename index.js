@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const port = 5555;
+const countriesList = require('countries-list');
+const countries = Object.values(countriesList.countries); 
 /* eslint-disable-next-line no-unused-vars */
 const ejs = require('ejs');
 const bodyParser = require('body-parser')
@@ -31,12 +33,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // rendered page
 app.get('/', async (req, res) => {
-  let groups = {}
-  groups = await db.collection('options').find({}).toArray()
+  let profiles = {}
+  profiles = await db.collection('profile').find({like:false}).toArray()
   res.render('index', {
-    title: 'ActiveTogether',
-    results: groups.length,
-    groups: groups
+    title: 'Sportbuddy',
+    results: profiles.length,
+    profiles,
+    countries
   })
 })
 
@@ -44,21 +47,31 @@ app.get('/', async (req, res) => {
 // form method="post"
 app.post('/', async (req, res) => {
   // data from database
-  let userLogedIn = {
-    "id": 11,
-    "username": "Tristanvrw",
-    "password": 12345,
-    "email": "tristan88@live.nl"
-}
-  let groups = {}
-  groups = await db.collection('options').find({}).toArray()
+  let profiles = {}
+  profiles = await db.collection('profile').find({like:false}).toArray()
   // filter criteria
-  /* Filter on: 
-     - Gender 
-     - Age 
-     - Country 
-     - Sport
-  if (req.body.activity !== 'all') {
+  if (req.body.sport !== 'all') {
+    profiles = profiles.filter(profile => { return profile.sport === req.body.sport })
+  }
+  if (req.body.age !== 'all') {
+    profiles = profiles.filter(profile => { return profile.age <= req.body.age })
+  }
+  if (req.body.country !== 'all') {
+    profiles = profiles.filter(profile => { return profile.country <= req.body.country })
+  }
+  if (req.body.gender !== 'all') {
+    profiles = profiles.filter(profile => { return profile.gender <= req.body.gender })
+  }
+  res.render('index', {
+    title: 'SportBuddy',
+    results: profiles.length,
+    profiles,
+    countries
+  })
+})
+
+ 
+/* if (req.body.activity !== 'all') {
     groups = groups.filter(group => { return group.activity === req.body.activity })
   }
   if (req.body.distance !== 'all') {
@@ -76,25 +89,6 @@ app.post('/', async (req, res) => {
     groups: groups
   })
 }) */ 
-
- if (req.body.activity !== 'all') {
-    groups = groups.filter(group => { return group.activity === req.body.activity })
-  }
-  if (req.body.distance !== 'all') {
-    groups = groups.filter(group => { return group.distance <= req.body.distance })
-  }
-  if (req.body.attendence !== 'all') {
-    groups = groups.filter(group => { return group.attendence <= req.body.attendence })
-  }
-  if (req.body.duration !== 'all') {
-    groups = groups.filter(group => { return group.duration <= req.body.duration })
-  }
-  res.render('index', {
-    title: 'ActiveTogether',
-    results: groups.length,
-    groups: groups
-  })
-})
 
 
 

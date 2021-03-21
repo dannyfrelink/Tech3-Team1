@@ -1,7 +1,37 @@
 
 <%- include('includes/head'); %>
+<%- include('includes/header'); %>
+<!-- header -->
+<main>
+  <section>
+    <form class="search">
+      <input type="text" placeholder="Search for events..."/>
+    </form>
+    <button class="filter-button"><ion-icon name="options"></ion-icon></button>
+  </section>
+  <!-- groups -->
+  <section>
+    <h2 class="results">available groups!</h2>
+    <ul> 
+      <li>
+        <div>
+          <h2> </h2>
+          <p><ion-icon name="walk"></ion-icon>  Activity:  </p>
+          <p><ion-icon name="location"></ion-icon> Distance:  km</p>
+          <p><ion-icon name="time"></ion-icon>  Duration:  hour</p>
+          <p><ion-icon name="people"></ion-icon>  Attendence: 0/</p><a href="#">Join Group! </a><a href="#">More Info</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>
+    </ul>
+  </section>
+</main>
+
+
+
 <!-- filter page -->
-<div class="header-element"></div>
 <article class="filters-hidden">
   <nav>
     <ul>
@@ -20,33 +50,54 @@
   <!-- filter form (inputs)-->
   <form class="form" action="/" method="POST">
     <div>
-    <label for="sports">Favorite Sports</label>
-    <select id="sports" name="sports">
-      <option>all</option>
-      <option value="cycling">Cycling</option>
-      <option value="walking">Walking</option>
-      <option value="jogging">Jogging</option>
-      <option value="fishing">Fishing</option>
+    <label for="sport">Favorite Sports</label>
+      <select id="sport" name="sport" required>
+      <option value="" hidden>Select your favorite sport</option>
+      <option>All</option>
+      <option value="American football">American Football</option>
+      <option value="Athletics">Athletics</option>
+      <option value="Badminton">Badminton</option>
+      <option value="Baseball">Baseball</option>
+      <option value="Basketball">Basketball</option>
+      <option value="Boxing">Boxing</option>
+      <option value="Cricket">Cricket</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Golf">Golf</option>
+      <option value="Gymnastics">Gymnastics</option>
+      <option value="Handball">Handball</option>
+      <option value="Hockey">Hockey</option>
+      <option value="Ice Hockey">Ice Hockey</option>
+      <option value="Rugby">Rugby</option>
+      <option value="Snooker">Snooker</option>
+      <option value="Soccer">Soccer</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Table tennis">Table Tennis</option>
+      <option value="Tennis">Tennis</option>
+      <option value="Volleyball">Volleyball</option>
     </select>
-    <label for="distance">Age (max)</label>
+    <label for="age">Age (max)</label>
     <!-- automatic value change, stackoverflow: https://stackoverflow.com/questions/44675522/get-the-text-value-of-a-select-created-dynamically-->
-    <input id="distance" type="range" name="distance" min="18" max="99" step="1" value="18" oninput="this.nextElementSibling.value = this.value">
+    <input id="age" type="range" name="age" min="18" max="75" step="1" value="18" oninput="this.nextElementSibling.value = this.value">
     <output>18</output>
-    <label for="attendence">Country</label>
-    <select id="attendence" name="attendence">
-      <option>all</option>
-      <option value="10">10 people</option>
-      <option value="20">20 people</option>
-      <option value="30">30 people</option>
-      <option value="40">40 or more people</option>
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="" hidden>Select your Country</option>
+      <option>All</option>
+      <% countries.forEach(function(countries) { %>
+      <% if(countries.continent === 'EU') { %>
+      <option value="<%= countries.name %>">
+      <%= countries.name %>
+      </option>
+      <% }; %>
+      <% }); %>
     </select>
-    <label for="duration">Gender</label>
-    <select id="duration" name="duration">
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+      <option value="" hidden>Select your Gender</option>
       <option>all</option>
-      <option value="1">1 hour</option>
-      <option value="2">2 hours</option>
-      <option value="3">3 hours</option>
-      <option value="4">4 hours or more</option>
+      <option value="Man">Man</option>
+      <option value="Woman">Woman</option>
+      <option value="Other">Other</option>
     </select>
     <input type="submit" value="FILTER">
     </div>
