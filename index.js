@@ -21,11 +21,11 @@ app.use(express.static('public'));
 app.set("view engine", "ejs");
 
 app.get('/', async (req, res) => {
-  let persons = {}
-  persons = await db.collection('profile').find({}).toArray();
-  if (req.body.like != true){
-    like = await db.collection('profile').update({"like":false}, {$set:{"like":true}});
-  }
+  // let like = {}
+  // like = await db.collection('profile').find({}).toArray();
+  // if (req.body.like != true){
+  //   like = await db.collection('profile').update({"like":false}, {$set:{"like":true}});
+  // }
   res.render('explore', {
     title:'Likes & Matches'
   });
