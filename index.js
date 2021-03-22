@@ -70,23 +70,41 @@ app.set('view engine', 'ejs');
 app.post('/profile', upload.single('image'), async (req, res) => {
 	let personalDB;
 
-	const img = `uploads/${req.file.path.split('/').pop()}`;
+	if(req.body.image == 'block') {
+		const img = `uploads/${req.file.path.split('/').pop()}`;
 
-	if(await personal.countDocuments() > 0) {
-		try {
-			const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
-			await personal.updateOne({}, {$set: { document }});
+		if(await personal.countDocuments() > 0) {
+			try {
+				const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
+				await personal.updateOne({}, {$set: { document }});
 
-			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+				personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+			}
+			catch (error) {
+				console.error('Error:', error);
+			}
 		}
-		catch (error) {
-			console.error('Error:', error);
+		else{
+			try {
+				const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
+				await personal.insertOne({ document });
+
+				personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+			}
+			catch (error) {
+				console.error('Error:', error);
+			}
 		}
 	}
 	else{
 		try {
+            console.log(req.body.name);
+
+			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+			const img = personalDB.document.image;
+
 			const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
-			await personal.insertOne({ document });
+			await personal.updateOne({}, {$set: { document }});
 
 			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
 		}
