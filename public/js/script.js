@@ -13,7 +13,7 @@ function previewImage() {
 		const fileReader = new FileReader();
 		fileReader.readAsDataURL(files);
 		fileReader.addEventListener('load', function () {
-			imgPreview.style.display = 'block';
+			// imgPreview.style.display = 'block';
 			imgPreview.innerHTML = `<img src="${this.result}" />`;
 		});   
 
@@ -22,3 +22,10 @@ function previewImage() {
 		});
 	}
 }
+
+const inputFileAdded = document.querySelector('.profileAdded input[type="file"]');
+const changePhoto = document.querySelector('form.profileAdded div:first-of-type label:last-of-type');
+
+changePhoto.addEventListener('click', function () {
+	inputFileAdded.style.display = 'block';
+});

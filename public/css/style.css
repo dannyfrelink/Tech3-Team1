@@ -108,6 +108,10 @@ h1{
     color: black;
 }
 
+.profileAdded input[type="file"] {
+    display: none;
+}
+
 footer{
     display:flex;
     justify-content:space-around;
