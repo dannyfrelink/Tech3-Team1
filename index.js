@@ -4,6 +4,7 @@ const port = 3000;
 const dotenv = require('dotenv').config();
 const { MongoClient } = require("mongodb");
 const bodyParser = require("body-parser");
+const { ObjectID } = require('mongodb');
 
 const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URI}`;
 
@@ -24,15 +25,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', async (req, res) => {
-  let like = {}
-  like = await db.collection('profile').find({}).toArray();
-  if (req.body.like != true){
-    like = await db.collection('profile').update({"like":false}, {$set:{"like":true}});
-    console.log("whoop");
-  }
+  let users = {}
+  users = await db.collection('profile').find({}).toArray();
   res.render('explore', {
-    title:'Likes & Matches'
+    title:'Likes & Matches',
+    users
   });
+})
+
+app.post('/like.ejs', (req, res) => {
+  let users = {}
+    users = db.collection('profile').updateOne({"name":req.body.name}, {$set:{"like":true}});
+    res.render('like', {title: 'test'});
 })
 
 app.get('/likes', async (req, res) => {

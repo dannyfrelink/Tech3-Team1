@@ -5,9 +5,18 @@
 </head>
 <body>
     <div class="blue-top"></div>
-    <form method="GET">
-        <button type="submit" value="false" id="btn">Knop</button>
+    <form method="POST" action="like.ejs">
+        <button type="button" value="true" id="btn">Knop</button>
     </form> 
+
+    <ul>
+        <% users.forEach(function(users) { %>
+            <li>
+                <img src="images/app/girl5.svg">
+                <%= users.name %>
+            </li>
+        <% }); %>
+    </ul>
 
     <script src="/script.js"></script>
 </body>
