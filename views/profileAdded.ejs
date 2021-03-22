@@ -21,7 +21,7 @@
             <div>
                 <label>Country</label>
                 <select name="countries">
-                    <option value="<%- personalDB.document.countries %>"><%- personalDB.document.countries %></option>
+                    <option value="<%- personalDB.document.countries %>" hidden><%- personalDB.document.countries %></option>
                     <% countries.forEach(function(countries) { %>
                         <% if(countries.continent === 'EU') { %>
                         <option value="<%= countries.name %>">
@@ -35,7 +35,7 @@
             <div>
                 <label>Gender</label>
                 <select name="gender">
-                    <option value="<%- personalDB.document.gender %>"><%- personalDB.document.gender %></option>
+                    <option value="<%- personalDB.document.gender %>" hidden><%- personalDB.document.gender %></option>
                     <option value="Man">Man</option>
                     <option value="Woman">Woman</option>
                     <option value="Other">Other</option>
@@ -50,7 +50,7 @@
             <div>
                 <label>Favorite sport</label>
                 <select name="sports">
-                    <option value="<%- personalDB.document.sports %>"><%- personalDB.document.sports %></option>
+                    <option value="<%- personalDB.document.sports %>" hidden><%- personalDB.document.sports %></option>
                     <option value="American football">American Football</option>
                     <option value="Athletics">Athletics</option>
                     <option value="Badminton">Badminton</option>
