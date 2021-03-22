@@ -70,13 +70,19 @@ app.set('view engine', 'ejs');
 app.post('/profile', upload.single('image'), async (req, res) => {
 	let personalDB;
 
-	if(req.body.image == 'block') {
-		const img = `uploads/${req.file.path.split('/').pop()}`;
+	if(req.file) {
+		const img = req.file ? `uploads/${req.file.path.split('/').pop()}` : personalDB.document.image;
 
 		if(await personal.countDocuments() > 0) {
 			try {
 				const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
-				await personal.updateOne({}, {$set: { document }});
+
+				if (personalDB.document) {
+
+					await personal.updateOne({}, {$set: { document }});
+				} else {
+					// insert
+				}
 
 				personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
 			}
@@ -95,8 +101,7 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 				console.error('Error:', error);
 			}
 		}
-	}
-	else{
+	} else{
 		try {
             console.log(req.body.name);
 
