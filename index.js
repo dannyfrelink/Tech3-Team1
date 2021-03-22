@@ -73,38 +73,24 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 	if(req.file) {
 		const img = `uploads/${req.file.path.split('/').pop()}`;
 
-		if(await personal.countDocuments() > 0) {
-			try {
-				const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
-
-				// if (personalDB.document) {
-
-				await personal.updateOne({}, {$set: { document }});
-				// } else {
-				// 	// insert
-				// }
-
-				personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
-			}
-			catch (error) {
-				console.error('Error:', error);
-			}
-		}
-		else{
-			try {
-				const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
-				await personal.insertOne({ document });
-
-				personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
-			}
-			catch (error) {
-				console.error('Error:', error);
-			}
-		}
-	} else{
 		try {
-            console.log(req.body.name);
+			const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
 
+			if(await personal.countDocuments() > 0) {
+				await personal.updateOne({}, {$set: { document }});
+			}
+			else {
+				await personal.insertOne({ document });
+			}
+
+			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+		}
+		catch (error) {
+			console.error('Error:', error);
+		}
+	} 
+	else{
+		try {
 			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
 			const img = personalDB.document.image;
 
@@ -123,7 +109,12 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 app.get('/profile', async (req, res) => {
 	if(await personal.countDocuments() > 0) {
 		let personalDB;
-		personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+		try {
+			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+		}
+		catch (error) {
+			console.error('Error:', error);
+		}
 		res.render('profileAdded', { title: 'Profile', personalDB, countries });
 	}
 	else {
