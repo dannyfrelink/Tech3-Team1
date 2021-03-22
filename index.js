@@ -103,23 +103,18 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 			console.error('Error:', error);
 		}
 	}
-	res.render('profileAdded', { title: 'Profile', personalDB, countries });
+	res.render('profile', { title: 'Profile', personalDB, countries });
 });
 
 app.get('/profile', async (req, res) => {
-	if(await personal.countDocuments() > 0) {
-		let personalDB;
-		try {
-			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
-		}
-		catch (error) {
-			console.error('Error:', error);
-		}
-		res.render('profileAdded', { title: 'Profile', personalDB, countries });
+	let personalDB;
+	try {
+		personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
 	}
-	else {
-		res.render('profile', {title: 'Profile', countries});
+	catch (error) {
+		console.error('Error:', error);
 	}
+	res.render('profile', { title: 'Profile', personalDB, countries });
 });
 
 app.use(function (req, res) {
