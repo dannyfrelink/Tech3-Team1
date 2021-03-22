@@ -8,11 +8,12 @@
         <h2>Your profile</h2>
         <form action="/profile" method="POST" enctype="multipart/form-data">
             <div>
-                <input type="file" id="image" name="image" value="image" accept="image/*" required>
                 <% if(personalDB) { %> 
+                    <input type="file" id="image" name="image" value="image" accept="image/*">
                     <label for="image"><img src="<%- personalDB.document.image %>" alt="profielfoto"></label>
                     <label for="image">Change photo</label>
                 <% } else { %>
+                    <input type="file" id="image" name="image" value="image" accept="image/*" required>
                     <label for="image"><p>+</p></label>
                     <label for="image">Upload photo</label>
                 <% }; %>
@@ -108,7 +109,11 @@
                 <% }; %>
             </div>
 
-            <button>Make profile</button>
+            <% if(personalDB) { %>
+                <button>Edit profile</button>
+            <% } else { %>
+                <button>Make profile</button>
+            <% }; %>
 
         </form>
         <%- include('layout/footer'); %>
