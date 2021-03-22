@@ -71,18 +71,18 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 	let personalDB;
 
 	if(req.file) {
-		const img = req.file ? `uploads/${req.file.path.split('/').pop()}` : personalDB.document.image;
+		const img = `uploads/${req.file.path.split('/').pop()}`;
 
 		if(await personal.countDocuments() > 0) {
 			try {
 				const document = { 'image': img, 'name': req.body.name, 'countries': req.body.countries, 'gender': req.body.gender, 'birthdate': req.body.date, 'sports': req.body.sports, 'interests': req.body.interests };
 
-				if (personalDB.document) {
+				// if (personalDB.document) {
 
-					await personal.updateOne({}, {$set: { document }});
-				} else {
-					// insert
-				}
+				await personal.updateOne({}, {$set: { document }});
+				// } else {
+				// 	// insert
+				// }
 
 				personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
 			}
