@@ -31,9 +31,6 @@ app.listen(port,() =>{
 })
 
 app.get('/', async (req,res)=>{
-	let users = {}
-	users = db.collection('profile').updateOne({"name":req.body.name}, {$set:{"like":true}});
-	res.render('index', {title: 'explore'});
-	console.log(req.body.name)
+	res.render('index')
     
 })
