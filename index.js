@@ -4,23 +4,20 @@ const port = 3000;
 const dotenv = require('dotenv').config();
 const {MongoClient} = require('mongodb');
 
-let db = null
-async function connectDB(){
-const uri = process.env.DB_URI
-const options = {useUnifiedTopology: true}
-const client = new MongoClient(uri,options);
-await client.connect(); // hierdoor worden geen andere taken uitgevoed totdat er verbonden is.
-db = await client.db(process.env.DB_NAME)
-}
+const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URI}`;
 
-connectDB()
-	.then(() =>{
-	console.log('gelukt om te verbinden met de database in .env bestand')
-	})
-	.catch(error =>{
-		console.log(error)
-	})
+let db;
 
+MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
+	if (err) {
+		console.log('MongoDB Error:' + err);
+	} else {
+		db = client.db(process.env.DB_NAME);
+		console.log('Connectie gelukt');
+	}
+});
+
+console.log(req.body.name)
 
 
 app.set('view engine', 'ejs') // instellen voor view engine
