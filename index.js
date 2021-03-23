@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -6,6 +7,14 @@ const { MongoClient } = require("mongodb");
 const bodyParser = require("body-parser");
 const { ObjectID } = require('mongodb');
 
+=======
+const express = require('express'); 
+const app = express(); 
+const port = 3000;
+const dotenv = require('dotenv').config();
+const {MongoClient} = require('mongodb');
+const bodyParser = require("body-parser");
+>>>>>>> mandemt
 const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URI}`;
 
 let db;
@@ -18,6 +27,7 @@ MongoClient.connect(dbURL, { useUnifiedTopology: true }, (err, client) => {
 		console.log('Connectie gelukt');
 	}
 });
+<<<<<<< HEAD
 
 app.use(express.static('public'));
 app.set("view engine", "ejs");
@@ -56,3 +66,23 @@ app.use(function (req, res, next) {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
 });
+=======
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+// console.log(req.body.name)
+
+
+
+app.set('view engine', 'ejs') // instellen voor view engine
+
+app.use(express.static('static'))
+
+app.listen(port,() =>{
+    console.log('luistert op port: port');
+})
+
+app.get('/', async (req,res)=>{
+	res.render('index')
+    
+})
+>>>>>>> mandemt
