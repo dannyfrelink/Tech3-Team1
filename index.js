@@ -37,19 +37,39 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // rendered page
 app.get('/', async (req, res) => {
 	let profiles = {};
+	let filterDB = {}; 
+	filterDB = await filter.findOne({}, { sort: { _id: -1 }, limit: 1 });
 	profiles = await db.collection('profile').findOne({like:false});
 	res.render('index', {
 		title: 'Sportbuddy',
 		results: profiles.length,
 		countries,
-		profiles: profiles
+		profiles: profiles,
+		filterDB
 	});
 });
 
 // rendered post page
 // form method="post"
-app.post('/', async (req, res) => {
+app.post('/liked', async (req, res) => {
 	await db.collection('profile').updateOne({'like':false}, {$set:{'like':true}}, {sort: {_id:1}});
+	let profiles = {};
+	profiles = await db.collection('profile').find({like:false}).toArray();
+	let filterDB = {}; 
+	filterDB = await filter.findOne({}, { sort: { _id: -1 }, limit: 1 });
+
+	profiles = await db.collection('profile').findOne({like:false});
+
+	res.render('index', {
+		title: 'SportBuddy',
+		results: profiles.length,
+		countries, 
+		profiles: profiles,
+		filterDB
+	});
+});
+
+app.post('/', async (req, res) => {
 	// data from database
 	let profiles = {};
 	profiles = await db.collection('profile').find({like:false}).toArray();
@@ -67,32 +87,25 @@ app.post('/', async (req, res) => {
 		profiles = profiles.filter(profile => { return profile.gender == req.body.gender; });
 	}
 
-	 
 
 	let filterDB;
-	if(await filter.countDocuments() > 0) {
 		try {
 			const document = { 'sport': req.body.sport, 'age': req.body.age, 'country': req.body.country, 'gender': req.body.gender };
-			await filter.updateOne({}, {$set: { document }});
+			if(await filter.countDocuments() > 0) {
+			   await filter.updateOne({}, {$set: { document }});
+			} 
+			else {
+			   await filter.insertOne({ document });
+			}
 			filterDB = await filter.findOne({}, { sort: { _id: -1 }, limit: 1 });
-		}
+		    }    
 		catch (error) {
 			console.error('Error:', error);
-		}}
-	else {
-		try {
-			const document = { 'sport': req.body.sport, 'age': req.body.age, 'country': req.body.country, 'gender': req.body.gender };
-			await filter.insertOne({ document });
-    
-			filterDB = await filter.findOne({}, { sort: { _id: -1 }, limit: 1 });
 		}
-		catch (error) {
-			console.error('Error:', error);
-		}}
 
 	profiles = await db.collection('profile').findOne({like:false});
 
-	res.render('filterAdded', {
+	res.render('index', {
 		title: 'SportBuddy',
 		results: profiles.length,
 		countries, 

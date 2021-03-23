@@ -24,7 +24,7 @@
           <p> <%- profiles.interests %></p>
           <a href="#">Join Group! </a>
           <a href="#">More Info</a>
-          <form action="/" method="POST">
+          <form action="/liked" method="POST">
           <button class="like-button">like</button>
           </form>
       </li>
@@ -64,7 +64,11 @@
     <div>
     <label for="sport">Favorite Sports</label>
       <select id="sport" name="sport" required>
+      <% if(filterDB) { %> 
+      <option value="<%- filterDB.document.sport %>" hidden><%- filterDB.document.sport %></option>
+      <% } else { %>
       <option value="" hidden>Select your favorite sport</option>
+      <% }; %>
       <option>All</option>
       <option value="American football">American Football</option>
       <option value="Athletics">Athletics</option>
@@ -89,11 +93,21 @@
     </select>
     <label for="age">Age (max)</label>
     <!-- automatic value change, stackoverflow: https://stackoverflow.com/questions/44675522/get-the-text-value-of-a-select-created-dynamically-->
-    <input id="age" type="range" name="age" min="18" max="75" step="1" value="18" oninput="this.nextElementSibling.value = this.value">
-    <output>18</output>
+    <% if(filterDB) { %> 
+      <input id="age" type="range" name="age" min="18" max="75" step="1" value="<%- filterDB.document.age %>" oninput="this.nextElementSibling.value = this.value" required>
+      <output><%- filterDB.document.age %></output>
+      <% } else { %>
+      <input id="age" type="range" name="age" min="18" max="75" step="1" value="18" oninput="this.nextElementSibling.value = this.value">
+      <output>18</output>
+      <% }; %>
+
     <label for="country">Country</label>
     <select id="country" name="country">
+      <% if(filterDB) { %> 
+      <option value="<%- filterDB.document.country %>" hidden><%- filterDB.document.country %></option>
+      <% } else { %>
       <option value="" hidden>Select your Country</option>
+      <% }; %>
       <option>All</option>
       <% countries.forEach(function(countries) { %>
       <% if(countries.continent === 'EU') { %>
@@ -105,7 +119,11 @@
     </select>
     <label for="gender">Gender</label>
     <select id="gender" name="gender" required>
+      <% if(filterDB) { %> 
+      <option value="<%- filterDB.document.gender %>" hidden><%- filterDB.document.gender %></option>
+      <% } else { %>
       <option value="" hidden>Select a Gender</option>
+      <% }; %>
       <option>All</option>
       <option value="Man">Man</option>
       <option value="Woman">Woman</option>
