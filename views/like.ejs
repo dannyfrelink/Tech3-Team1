@@ -4,9 +4,13 @@
     <%- include('layout/head'); %>
 </head>
 <body>
-    <div class="blue-top"></div>
+    <header>
+        <%- include('layout/header'); %>
+    </header>
+  
+    <h1> <%= title %></h1>
 
-    <h2> <%- title %> </h2>
+ 
 
     <div class='container'>
         <label class="switch">
@@ -14,16 +18,19 @@
                 <span class="slider"></span>
         </label>
     </div>
-
+   
     <p> <%= results %> people liked you</p>
 
     <ul>
         <% people.forEach(function(people) { %>
             <li>
                 <img src="images/app/girl5.svg">
-                <%= people.name %>
+               <p><%= people.name %></p> 
             </li>
         <% }); %>
     </ul>
+    <footer>
+        <%- include('layout/footer.ejs')%>
+    </footer>
 </body>
 </html>
