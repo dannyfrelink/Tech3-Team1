@@ -17,17 +17,23 @@
   </div>
     
     <ul>
-     
-      <li>
-          <p> <%- profiles.name %>, <%- profiles.age %></p>
-          <p> <%- profiles.sport %></p>
-          <p> <%- profiles.interests %></p>
+      <% if (locals.profile) { %>
+        <li>
+          <p><%- profile.name %>, <%- profile.age %></p>
+          <p><%- profile.sport %></p>
+          <p><%- profile.interests %></p>
           <a href="#">Join Group! </a>
           <a href="#">More Info</a>
-          <form action="/liked" method="POST">
-          <button class="like-button">like</button>
+          <form action="<%= selectedQueries ? `/${selectedQueries}` : '/' %>" method="POST">
+            <button type="submit" name="id" value="<%= profile._id %>">Dislike</button>
           </form>
-      </li>
+          <form action="<%= selectedQueries ? `/liked${selectedQueries}` : '/liked' %>" method="POST">
+            <button type="submit" name="id" value="<%= profile._id %>">Like</button>
+          </form>
+        </li>
+      <% } else { %>
+        <p>No profiles found</p>
+      <% } %>
     
     </ul>
   </section>
@@ -60,15 +66,13 @@
     </ul>
   </nav>
   <!-- filter form (inputs)-->
-  <form class="form" action="/" method="POST">
+  <form class="form" action="/" method="GET">
     <div>
     <label for="sport">Favorite Sports</label>
       <select id="sport" name="sport" required>
-      <% if(filterDB) { %> 
-      <option value="<%- filterDB.document.sport %>" hidden><%- filterDB.document.sport %></option>
-      <% } else { %>
-      <option value="" hidden>Select your favorite sport</option>
-      <% }; %>
+
+      <option value="<%= queries.sport ? queries.sport : 'All' %>" hidden><%= queries.sport ? queries.sport : 'All' %></option>
+        
       <option>All</option>
       <option value="American football">American Football</option>
       <option value="Athletics">Athletics</option>
@@ -93,21 +97,12 @@
     </select>
     <label for="age">Age (max)</label>
     <!-- automatic value change, stackoverflow: https://stackoverflow.com/questions/44675522/get-the-text-value-of-a-select-created-dynamically-->
-    <% if(filterDB) { %> 
-      <input id="age" type="range" name="age" min="18" max="75" step="1" value="<%- filterDB.document.age %>" oninput="this.nextElementSibling.value = this.value" required>
-      <output><%- filterDB.document.age %></output>
-      <% } else { %>
-      <input id="age" type="range" name="age" min="18" max="75" step="1" value="18" oninput="this.nextElementSibling.value = this.value">
-      <output>18</output>
-      <% }; %>
+      <input id="age" type="range" name="age" min="18" max="75" step="1" value="<%= queries.age ? queries.age : '75' %>" oninput="this.nextElementSibling.value = this.value">
+      <output><%= queries.age ? queries.age : '75' %></output>
 
     <label for="country">Country</label>
     <select id="country" name="country">
-      <% if(filterDB) { %> 
-      <option value="<%- filterDB.document.country %>" hidden><%- filterDB.document.country %></option>
-      <% } else { %>
-      <option value="" hidden>Select your Country</option>
-      <% }; %>
+      <option value="<%= queries.country ? queries.country : 'All' %>" hidden><%= queries.country ? queries.country : 'All' %></option>
       <option>All</option>
       <% countries.forEach(function(countries) { %>
       <% if(countries.continent === 'EU') { %>
@@ -119,11 +114,7 @@
     </select>
     <label for="gender">Gender</label>
     <select id="gender" name="gender" required>
-      <% if(filterDB) { %> 
-      <option value="<%- filterDB.document.gender %>" hidden><%- filterDB.document.gender %></option>
-      <% } else { %>
-      <option value="" hidden>Select a Gender</option>
-      <% }; %>
+      <option value="<%= queries.gender ? queries.gender : 'All' %>" hidden><%= queries.gender ? queries.gender : 'All' %></option>
       <option>All</option>
       <option value="Man">Man</option>
       <option value="Woman">Woman</option>
