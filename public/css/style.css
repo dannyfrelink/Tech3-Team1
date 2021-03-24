@@ -177,11 +177,16 @@ a {
 }
  h1 {
   color: #5A7DEC;
-  font-size: 3em;
+  font-size: 2.6em;
   font-weight: 600;
   letter-spacing: 0.5px;
   line-height: 1.2em;
   font-family: 'Dosis', sans-serif;
+  margin-bottom: .2em;
+}
+
+.logo h2{
+  font-size: .8em;
 }
 
 .filter-container{
@@ -199,15 +204,21 @@ a {
   border: none;
 }
 
+.filter-results{
+  font-size: 1.4em; 
+  font-family: 'Dosis', sans-serif;
+  font-weight: 400;
+}
+
 
 /* Groups Slider */
 section:nth-of-type(2) > ul {
   display: flex;
   flex-wrap: nowrap;
   list-style: none;
-  padding: 0em 1.5em 2em 1.5em;
+  margin-left: .5em;
   width: fit-content;
-  margin-top: 1.5em;
+  
 }
 
 section:nth-of-type(2) ul li {
@@ -215,7 +226,7 @@ section:nth-of-type(2) ul li {
     url(/assets/card-background.jpg);
     /* image source, pexels: https://www.pexels.com/nl-nl/foto/bladeren-op-bestrating-naast-hek-1645840/*/
   background-size: cover;
-  width: 20em;
+  width: 22em;
   height: 28em;
   border-radius: 10px;
   color: white;
@@ -322,3 +333,20 @@ span {
 
 /* Annoying overflow */
 
+footer{
+  display:flex; 
+  justify-content: space-around;
+  position: fixed;
+  left:0; 
+  bottom:0; 
+  background-color: #D3DEFF; 
+  width: 100%; 
+  padding: .4em; 
+
+
+}
+
+footer span{
+  color:#5A7DEC;
+
+}
