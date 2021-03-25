@@ -29,7 +29,7 @@ ul{
     height:auto;
     list-style-type:none;
     padding:0;
-    margin:0 auto 5em;
+    margin:7.5em auto 5em;
     width:80%;
     display:flex;
     flex-direction:column;
@@ -62,13 +62,79 @@ ul li p{
 p{
     text-align:center;
 }
+ul li:hover{
+    background-color:#8eb3f8;
+}
+
+/* slider */
+
+.container{
+    position:absolute;
+    top:12em;
+    left:50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight:400;
+    font-size:1.5em;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width:300px;
+    height:60px;
+    margin: 0 10px;
+    
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: red;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch input{
+    display: none;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height:50px;
+    width:150px;
+    left:5px;
+    bottom:5px;
+    background-color:blue;
+    transition: .4s;
+    border-radius: 50px;
+    text-align:left;
+}
+
+input:checked + .slider{
+    background-color: #ccc;
+    visibility:hidden;
+}
+
+input:checked + .slider:before{
+    transform: translateX(140px)
+}
+
+/* einde slider */
+
+
 footer{
     display:flex;
     justify-content:space-around;
     position:fixed;
     bottom:0;
-    background-color:#434343;
+    background-color:#5A7DEC;
     width:100%;
     padding:1em;
-    
+  
 }
