@@ -16,17 +16,23 @@
       </span></button>
   </div>
     
-    <ul>
+    <ul class="cards">
       <% if (locals.profile) { %>
         <li>
+          <div>
           <p><%- profile.name %>, <%- profile.age %></p>
           <p><%- profile.sport %></p>
           <p><%- profile.interests %></p>
+          </div>
           <form action="<%= selectedQueries ? `/${selectedQueries}` : '/' %>" method="POST">
-            <button type="submit" name="id" value="<%= profile._id %>">Dislike</button>
+            <button class="dislike-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
+              close
+              </span></button>
           </form>
           <form action="<%= selectedQueries ? `/liked${selectedQueries}` : '/liked' %>" method="POST">
-            <button type="submit" name="id" value="<%= profile._id %>">Like</button>
+            <button class="like-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
+              favorite
+              </span></button>
           </form>
         </li>
       <% } else { %>

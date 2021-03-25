@@ -189,6 +189,7 @@ a {
   font-size: .8em;
 }
 
+
 .filter-container{
   display: flex;
   justify-content: space-between;
@@ -198,7 +199,7 @@ a {
 
 /* filter button */
 .filter-button {
-  color: #5A7DEC;
+  color:  #FF6A6A;
   background-color: white;
   padding: 0em;
   border: none;
@@ -218,19 +219,78 @@ section:nth-of-type(2) > ul {
   list-style: none;
   margin-left: .5em;
   width: fit-content;
-  
 }
 
 section:nth-of-type(2) ul li {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/assets/card-background.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(/assets/sport-example.jpeg);
     /* image source, pexels: https://www.pexels.com/nl-nl/foto/bladeren-op-bestrating-naast-hek-1645840/*/
   background-size: cover;
   width: 22em;
   height: 28em;
   border-radius: 10px;
   color: white;
+  position: relative;
   margin-left: 1.5em;}
+
+
+.like-button, .dislike-button{
+  position:absolute; 
+  bottom: 2%;
+  border: none;
+  background-color:#5A7DEC;
+ padding: .3em .8em;
+ border-radius: 20%;
+ -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12); 
+box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12);
+
+}
+
+.like-button{
+  right: 10%;
+  color: white;
+}
+
+.like-button:active{
+  color: #FF6A6A;
+}
+
+.dislike-button{
+ left: 10%;
+ color: white;
+}
+
+.dislike-button:active{
+  color:black;
+}
+
+.cards li div {
+  position: absolute;
+  bottom: 0%;
+  padding: .5em .7em 4em .7em;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+}
+
+.cards li div p{
+  line-height: 1.2em;
+}
+
+.cards li div p:first-of-type{
+  font-size: 2em;
+  font-family: 'Dosis', sans-serif;
+}
+
+.cards li div p:nth-of-type(2){
+  font-size: 1.2em;
+  font-family: 'Dosis', sans-serif;
+}
+
+.cards li div p:nth-of-type(3){
+  font-size: .8em;
+  margin-bottom: .5em;
+}
+
 
 
 /* filter screen (filters) */
@@ -265,10 +325,6 @@ section:nth-of-type(2) ul li {
   padding: .5em;
   background-color:#D3DDFF;
   color: #5A7DEC;
-}
-
-.filter-hidden nav ul li:first-of-type button {
-  color: red;
 }
 
 .filters-hidden h2 {
@@ -339,9 +395,12 @@ footer{
   position: fixed;
   left:0; 
   bottom:0; 
-  background-color: #D3DEFF; 
+  background-color: white; 
   width: 100%; 
   padding: .4em; 
+  -webkit-box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
+  
 
 
 }
