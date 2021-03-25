@@ -105,16 +105,18 @@ h1{
 }
 
 footer{
-    display:flex;
-    justify-content:space-around;
-    position:fixed;
-    left: 0;
-    bottom:0;
-    background-color:lightgray;
-    width:100%;
-    padding: 0.5em 0;
+    display:flex; 
+    justify-content: space-around;
+    position: fixed;
+    left:0; 
+    bottom:0; 
+    background-color: white; 
+    width: 100%; 
+    padding: .4em; 
+    -webkit-box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);   
 }
 
-footer img{
-    height: 2.5em;
+footer span{
+    color:#5A7DEC;
 }
