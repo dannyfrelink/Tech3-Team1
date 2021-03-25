@@ -134,7 +134,7 @@ border-spacing: 0;
 /* fonts source: fonts.google.com */
 /*font-family: 'Dosis', sans-serif;*/
 
-body {
+.explore {
 font-family: 'Poppins', sans-serif;
 }
 
@@ -143,15 +143,6 @@ a {
 text-decoration: none;
 }
 
-h1,
-h2,
-label {
-font-family: "Poppins", sans-serif;
-}
-
-a {
-text-decoration: none;
-}
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -159,7 +150,7 @@ text-decoration: none;
 .material-icons.md-48 { font-size: 48px; }
 .material-icons {font-weight: bold;}
 
-.header{
+.explore .header{
 background-color: #5A7DEC;
 width:100%;
 height:10vh;
@@ -167,11 +158,11 @@ top:0;
 clip-path: polygon(0 0, 100% 100%, 100% 0);
 }
 
-.logo{
+.explore .logo{
 margin-left: 2.5em;
 }
 
-h1 {
+.explore h1 {
 color: #5A7DEC;
 font-size: 2.6em;
 font-weight: 600;
@@ -181,12 +172,12 @@ font-family: 'Dosis', sans-serif;
 margin-bottom: .2em;
 }
 
-.logo h2{
+.explore .logo h2{
 font-size: .8em;
 }
 
 
-.filter-container{
+.explore .filter-container{
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -194,14 +185,14 @@ margin: 2em 2.5em 0 2.5em;
 }
 
 /* filter button */
-.filter-button {
+.explore .filter-button {
 color:  #FF6A6A;
 background-color: white;
 padding: 0em;
 border: none;
 }
 
-.filter-results{
+.explore .filter-results{
 font-size: 1.4em; 
 font-family: 'Dosis', sans-serif;
 font-weight: 400;
@@ -209,12 +200,12 @@ font-weight: 400;
 
 
 /* Groups Slider */
-section:nth-of-type(2) > ul {
+.explore section:nth-of-type(2) > ul {
 margin-left: .5em;
 width: fit-content;
 }
 
-section:nth-of-type(2) ul li {
+.explore section:nth-of-type(2) ul li {
 background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
 url(/assets/sport-example.jpeg);
 /* image source, pexels: https://www.pexels.com/nl-nl/foto/bladeren-op-bestrating-naast-hek-1645840/*/
@@ -227,7 +218,7 @@ position: relative;
 margin-left: 1.5em;}
 
 
-.like-button, .dislike-button{
+.explore .like-button, .explore .dislike-button{
 position:absolute; 
 bottom: 2%;
 border: none;
@@ -239,25 +230,25 @@ box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12);
 
 }
 
-.like-button{
+.explore .like-button{
 right: 10%;
 color: white;
 }
 
-.like-button:active{
+.explore .like-button:active{
 color: #FF6A6A;
 }
 
-.dislike-button{
+.explore .dislike-button{
 left: 10%;
 color: white;
 }
 
-.dislike-button:active{
+.explore .dislike-button:active{
 color:black;
 }
 
-.cards li section {
+.explore .cards li section {
 position: absolute;
 bottom: 0%;
 padding: .5em .7em 4em .7em;
@@ -266,21 +257,21 @@ border-radius: 20px;
 font-family: 'Dosis', sans-serif;
 }
 
-.cards li section p{
+.explore .cards li section p{
 line-height: 1.2em;
 }
 
-.cards li section p:first-of-type{
+.explore .cards li section p:first-of-type{
 font-size: 2em;
 
 }
 
-.cards li section p:nth-of-type(2){
+.explore .cards li section p:nth-of-type(2){
 font-size: 1.2em;
 
 }
 
-.cards li section p:nth-of-type(3){
+.explore .cards li section p:nth-of-type(3){
 font-size: .8em;
 margin-bottom: .5em;
 font-family: 'Poppins', sans-serif;
@@ -290,7 +281,7 @@ font-family: 'Poppins', sans-serif;
 
 /* filter screen (filters) */
 
-.filters-hidden {
+.explore .filters-hidden {
 position: absolute;
 background-color: white;
 bottom: 0;
@@ -302,11 +293,11 @@ transition: 1s;
 overflow: hidden;
 }
 
-.filters-show {
+.explore .filters-show {
 transform: translateY(0%);
 }
 
-.filters-hidden nav ul {
+.explore .filters-hidden nav ul {
 margin-top: 2em;
 margin-bottom: 2.5em;
 display: flex;
@@ -314,7 +305,7 @@ justify-content: space-evenly;
 align-items: center;
 }
 
-.filters-hidden nav ul li button {
+.explore .filters-hidden nav ul li button {
 border: none;
 border-radius: 3px;
 padding: .5em;
@@ -322,7 +313,7 @@ background-color:#D3DDFF;
 color: #5A7DEC;
 }
 
-.filters-hidden h2 {
+.explore .filters-hidden h2 {
 font-size: 2em;
 font-weight: 600;
 font-family:'Dosis', sans-serif;
@@ -330,13 +321,13 @@ color: #5A7DEC;
 }
 
 /* filter form (filter inputs) */
-.form {
+.explore .form {
 width: 100%;
 display: flex;
 justify-content: center;
 }
 
-label {
+.explore label {
 font-family: "Poppins", sans-serif;
 font-size: 1em;
 font-weight: 400;
@@ -345,7 +336,7 @@ margin-bottom: 0.5em;
 display: block;
 }
 
-.form input,
+.explore .form input,
 select {
 width: 25em;
 height: 3em;
@@ -357,7 +348,7 @@ display: block;
 }
 
 
-input[type="submit"] {
+.explore input[type="submit"] {
 position: fixed;
 top: 90%;
 right: 50%;
@@ -374,17 +365,17 @@ width: 17em;
 
 /* output for range input */
 /* output tag source: https://www.w3schools.com/tags/tag_output.asp */
-output {
+.explore output {
 font-family: "Poppins", sans-serif;
 
 }
-span {
+.explore span {
 font-family: "Poppins", sans-serif;
 }
 
 /* Annoying overflow */
 
-footer{
+.explore footer{
 display:flex; 
 justify-content: space-around;
 position: fixed;
@@ -398,7 +389,7 @@ box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
 
 }
 
-footer span{
+.explore footer span{
 color:#5A7DEC;
 
 }

@@ -2,6 +2,8 @@
 <%- include('includes/head'); %>
 <%- include('includes/header'); %>
 <!-- header -->
+
+<body class="explore">
 <main>
   <section class="logo">
   <h1>Exploring</h1>
@@ -25,11 +27,33 @@
           <p><%- profile.interests %></p>
           </section>
           <form action="<%= selectedQueries ? `/${selectedQueries}` : '/' %>" method="POST">
-            <button class="dislike-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
-              close
-              </span></button>
+            <% if(personalDB) { %>
+              <button class="dislike-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
+                close
+                </span></button>
+            <% } else { %>
+              <a class="dislike-button" href="/profile">
+                <span class="material-icons md-36">
+                close
+                </span>
+              </a>
+            <% }; %>
           </form>
           <form action="<%= selectedQueries ? `/liked${selectedQueries}` : '/liked' %>" method="POST">
+            <% if(personalDB) { %>
+              <button class="like-button" type="submit" name="id" value="<%= profile._id %>">
+                <span class="material-icons md-36">
+                favorite
+                </span>
+              </button>
+            <% } else { %>
+              <a class="dislike-button" href="/profile">
+                <span class="material-icons md-36">
+                favorite
+                </span>
+              </a>
+            <% }; %>
+
             <button class="like-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
               favorite
               </span></button>

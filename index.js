@@ -32,9 +32,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get('/', async (req, res) => {
 	let profiles;
 	let queryArray = [];
+	let personalDB;
 
 	try {
 		profiles = await db.collection('profile').find({like:false}).toArray();
+		personalDB = await db.collection('personal').findOne({});
 	}    
 	catch (error) {
 		console.error('Error:', error);
@@ -76,13 +78,14 @@ app.get('/', async (req, res) => {
 
 	profile = await profiles[0];
 
-	res.render('index', {
+	res.render('explore', {
 		title: 'Sportbuddy',
 		profilesLength: profiles.length,
 		countries,
 		profile,
 		queries: req.query,
-		selectedQueries
+		selectedQueries,
+		personalDB
 	});
 });
 
@@ -134,7 +137,7 @@ app.post('/', async (req, res) => {
 
 	profile = await profiles[0];
 
-	res.render('index', {
+	res.render('explore', {
 		title: 'SportBuddy',
 		profilesLength: profiles.length,
 		countries, 
@@ -194,7 +197,7 @@ app.post('/liked', async (req, res) => {
 
 	profile = await profiles[0];
 
-	res.render('index', {
+	res.render('explore', {
 		title: 'SportBuddy',
 		profilesLength: profiles.length,
 		countries, 
