@@ -67,62 +67,31 @@ ul li:hover{
 }
 
 /* slider */
-
 .container{
-    position:absolute;
-    top:12em;
-    left:50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-weight:400;
-    font-size:1.5em;
-}
-
-.switch{
-    position: relative;
-    display: inline-block;
-    width:300px;
-    height:60px;
-    margin: 0 10px;
+    background-color:lightgray;
+    border-radius:1em;
+    width:50%;
+    margin:0 auto;
+    display:flex;
+    justify-content: space-evenly;
     
 }
-
-.slider{
-    position: absolute;
-    cursor: pointer;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color: red;
-    transition: .4s;
-    border-radius: 34px;
+#likes, #matches{
+    text-align:center;
+    font-size:1.5em;
+    padding:.5em;
+    border-radius:.5em;
+   
+ 
 }
 
-.switch input{
-    display: none;
+.like{
+    background-color:darkgray;
+    transition:.5s;
 }
-
-.slider::before{
-    position: absolute;
-    content: "";
-    height:50px;
-    width:150px;
-    left:5px;
-    bottom:5px;
-    background-color:blue;
-    transition: .4s;
-    border-radius: 50px;
-    text-align:left;
-}
-
-input:checked + .slider{
-    background-color: #ccc;
-    visibility:hidden;
-}
-
-input:checked + .slider:before{
-    transform: translateX(140px)
+.match{
+    background-color:darkgray;
+    transition:.5s;
 }
 
 /* einde slider */

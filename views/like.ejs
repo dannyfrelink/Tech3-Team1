@@ -12,11 +12,11 @@
 
  
 
-    <div class='container'>
-        <label class="switch">
-            <input type="checkbox" checked>mathces
-                <span class="slider">likes</span>
-        </label>
+    <div class='container'>  
+    <p id="likes">likes</p>
+  
+    <p id="matches">matches</p>        
+
     </div>
    
     <p> <%= results %> people liked you</p>
@@ -29,6 +29,7 @@
             </li>
         <% }); %>
     </ul>
+    <script src="script.js"></script>
     <footer>
         <%- include('layout/footer.ejs')%>
     </footer>
