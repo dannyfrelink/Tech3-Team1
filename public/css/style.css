@@ -1,12 +1,115 @@
-html {
-    overflow-x: hidden;
+/* 
+css preset. 
+Source: http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
-body.profile {
+html {
     overflow-x: hidden;
-    width: 85vw;
-    margin: auto;
-    font-family: 'Poppins', sans-serif;
 }
 
 .header{
@@ -19,11 +122,263 @@ body.profile {
     clip-path: polygon(0 0, 100% 100%, 100% 0);
 }
 
-h1{
-    margin-top:3em;
-    width:100%;
-    font-size:5em;
-    text-align:center;
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* fonts source: fonts.google.com */
+/*font-family: 'Dosis', sans-serif;*/
+
+.explore {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* standard mark-up */
+a {
+    text-decoration: none;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons {font-weight: bold;}
+
+.explore .logo{
+    margin-left: 2.5em;
+}
+
+.explore h1 {
+    color: #5A7DEC;
+    font-size: 2.6em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.2em;
+    font-family: 'Dosis', sans-serif;
+    margin-bottom: .2em;
+}
+
+.explore .logo h2{
+    font-size: .8em;
+}
+
+
+.explore .filter-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 2.5em 0 2.5em;
+}
+
+/* filter button */
+.explore .filter-button {
+    color:  #FF6A6A;
+    background-color: white;
+    padding: 0em;
+    border: none;
+}
+
+.explore .filter-results{
+    font-size: 1.4em; 
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+
+
+/* Groups Slider */
+.explore section:nth-of-type(2) > ul {
+    margin-left: .5em;
+    width: fit-content;
+}
+
+.explore section:nth-of-type(2) ul li {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(/assets/sport-example.jpeg);
+    /* image source, pexels: https://www.pexels.com/nl-nl/foto/bladeren-op-bestrating-naast-hek-1645840/*/
+    background-size: cover;
+    width: 22em;
+    height: 28em;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    margin-left: 1.5em;
+}
+
+
+.explore .like-button, .explore .dislike-button{
+    position:absolute; 
+    bottom: 2%;
+    border: none;
+    background-color:#5A7DEC;
+    padding: .3em .8em;
+    border-radius: 20%;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12); 
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12);
+
+}
+
+.explore .like-button{
+    right: 10%;
+    color: white;
+}
+
+.explore .like-button:active{
+    color: #FF6A6A;
+}
+
+.explore .dislike-button{
+    left: 10%;
+    color: white;
+}
+
+.explore .dislike-button:active{
+    color:black;
+}
+
+.explore .cards li section {
+    position: absolute;
+    bottom: 0%;
+    padding: .5em .7em 4em .7em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.explore .cards li section p{
+    line-height: 1.2em;
+}
+
+.explore .cards li section p:first-of-type{
+    font-size: 2em;
+
+}
+
+.explore .cards li section p:nth-of-type(2){
+    font-size: 1.2em;
+
+}
+
+.explore .cards li section p:nth-of-type(3){
+    font-size: .8em;
+    margin-bottom: .5em;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* filter screen (filters) */
+
+.explore .filters-hidden {
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    color: black;
+    transform: translateY(-100%);
+    transition: 1s;
+    overflow: hidden;
+}
+
+.explore .filters-show {
+    transform: translateY(0%);
+}
+
+.explore .filters-hidden nav ul {
+    margin-top: 2em;
+    margin-bottom: 2.5em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.explore .filters-hidden nav ul li button {
+    border: none;
+    border-radius: 3px;
+    padding: .5em;
+    background-color:#D3DDFF;
+    color: #5A7DEC;
+}
+
+.explore .filters-hidden h2 {
+    font-size: 2em;
+    font-weight: 600;
+    font-family:'Dosis', sans-serif;
+    color: #5A7DEC;
+}
+
+/* filter form (filter inputs) */
+.explore .form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.explore label {
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.explore .form input,
+select {
+    width: 25em;
+    height: 3em;
+    border: solid 1px #5A7DEC;
+    border-radius: 3px;
+    background-color: white;
+    text-align: center;
+    display: block;
+}
+
+
+.explore input[type="submit"] {
+    position: fixed;
+    top: 90%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    border: none;
+    border-radius: 3px;
+    background-color: #FF6A6A;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    width: 17em;
+}
+
+/* output for range input */
+/* output tag source: https://www.w3schools.com/tags/tag_output.asp */
+.explore output {
+    font-family: "Poppins", sans-serif;
+}
+
+body.profile {
+  overflow-x: hidden;
+  width: 85vw;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
 }
 
 .profile h2 {
@@ -104,17 +459,20 @@ h1{
     justify-content: center;
 }
 
-footer{
-    display:flex;
-    justify-content:space-around;
-    position:fixed;
-    left: 0;
-    bottom:0;
-    background-color:lightgray;
-    width:100%;
-    padding: 0.5em 0;
+footer {
+    display:flex; 
+    justify-content: space-around;
+    position: fixed;
+    left:0; 
+    bottom:0; 
+    background-color: white; 
+    width: 100%; 
+    padding: .4em; 
+    -webkit-box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
 }
 
-footer img{
-    height: 2.5em;
+footer span{
+    color:#5A7DEC;
+    font-family: 'Material Icons';
 }
