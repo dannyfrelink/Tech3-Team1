@@ -107,6 +107,21 @@ nav,
 section {
     display: block;
 }
+
+html {
+    overflow-x: hidden;
+}
+
+.header{
+    background-color: #5A7DEC;
+    width:100%;
+    height:10vh;
+    position:absolute;
+    left: 0;
+    top:0;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+}
+
 body {
     line-height: 1;
 }
@@ -130,7 +145,6 @@ table {
     border-spacing: 0;
 }
 
-
 /* fonts source: fonts.google.com */
 /*font-family: 'Dosis', sans-serif;*/
 
@@ -143,20 +157,11 @@ a {
     text-decoration: none;
 }
 
-
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 .material-icons {font-weight: bold;}
-
-.explore .header{
-    background-color: #5A7DEC;
-    width:100%;
-    height:10vh;
-    top:0;
-    clip-path: polygon(0 0, 100% 100%, 100% 0);
-}
 
 .explore .logo{
     margin-left: 2.5em;
@@ -279,7 +284,6 @@ a {
 
 }
 
-
 /* filter screen (filters) */
 
 .explore .filters-hidden {
@@ -370,7 +374,90 @@ select {
     font-family: "Poppins", sans-serif;
 }
 
-/* Annoying overflow */
+body.profile {
+  overflow-x: hidden;
+  width: 85vw;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile h2 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 2em;
+    font-size: 2em;
+}
+
+.profile input[type="file"] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.profile form div {
+    display: flex;
+}
+
+.profile form div:first-of-type {
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.profile form div:first-of-type label:first-of-type {
+    max-height: 4.925em;
+}
+
+.profile form div:first-of-type label p,
+.profile form div:first-of-type label img {
+    background-color: white;
+	border: 1px solid black;
+    border-radius: 0.25em;
+    font-size: 3em;
+	height: 1.6em;
+    margin: 0;
+}
+
+.profile form div:first-of-type label p {
+    width: 1.15em;
+    padding-left: 0.45em;
+    line-height: 1.7em;
+}
+
+.profile form div:first-of-type label img {
+    object-fit: cover;
+    width: 1.6em;
+}
+
+.profile form div:first-of-type label:nth-of-type(2) {
+    text-decoration: underline;
+    font-size: 0.8em;
+    margin-left: 0.8em;
+}
+
+.profile form div:not(:first-of-type) {
+    margin-top: 0.6em;
+    flex-direction: column;
+}
+
+.profile form textarea {
+    height: 7em;
+}
+
+.profile form button {
+    background-color: #F26A6B;
+    color: white;
+    border: none;
+    border-radius: 0.25em;
+    width: 70vw;
+    font-size: 1.3em;
+    height: 2.5em;
+    margin: 2em 7.5vw 5em;
+    justify-content: center;
+}
 
 footer {
     display:flex; 
@@ -389,5 +476,3 @@ footer span{
     color:#5A7DEC;
     font-family: 'Material Icons';
 }
-
-

@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Joris",
+        "country": "Netherlands",
+        "gender": "Man",
+        "age": 22,
+        "sport": "Hockey",
+        "interests": "Since I was 20 I have been working on my HBO study CMD. At the moment I am very busy with school, but I also really enjoy playing sports. Since I don't like to do this alone, I am looking for a buddy.",
+        "like": true
+    },
+    {
+        "name": "Ahmed",
+        "country": "Turkey",
+        "gender": "Man",
+        "age": 19,
+        "sport": "Soccer",
+        "interests": "Since my youth I have been on the street playing football with my friends. Because we have all gotten a little older, we speak. we no longer meet. So I am looking for new people to play football with again.",
+        "like": true
+    },
+    {
+        "name": "Isabella",
+        "country": "Italy",
+        "gender": "Vrouw",
+        "age": 24,
+        "sport": "Gymnastics",
+        "interests": "I really enjoy being creative. I have been making paintings of landscapes since I was 12 years old.",
+        "like": false
+    },
+    {
+        "name": "Lisa",
+        "country": "Netherlands",
+        "gender": "Vrouw",
+        "age": 41,
+        "sport": "Golf",
+        "interests": "My idol is Tiger Woods and I dream of meeting him one day. I try to go through all Golf tournaments throughout the year to see him play.",
+        "like": true
+    },
+    {
+        "name": "Ethan",
+        "country": "England",
+        "gender": "Man",
+        "age": 37,
+        "sport": "Snooker",
+        "interests": "I can be found in the gym 24/7, so I take this very seriously. At the moment I am trying to become a professional snooker player. Would you like to train together?",
+        "like": false
+    },
+    {
+        "name": "Greta",
+        "country": "Ukraine",
+        "gender": "Woman",
+        "age": 55,
+        "sport": "Cycling",
+        "interests": "On my older day I still really enjoy being active. For example, I often go on a walking or cycling holiday in the summer. Last summer I was busy cycling 400km.",
+        "like": false
+    },
+    {
+        "name": "Rafael",
+        "country": "Spain",
+        "gender": "Man",
+        "age": 26,
+        "sport": "Tennis",
+        "interests": "In my spare time I enjoy having a bite to eat and drink with friends. I try to do this at least once a week.",
+        "like": false
+    },
+    {
+        "name": "Carolina",
+        "country": "Spain",
+        "gender": "Vrouw",
+        "age": 44,
+        "sport": "Badminton",
+        "interests": "I play badminton at a very high level. For this I am going to several international tournaments during the year. Would you like to get well together with me?",
+        "like": false
+    },
+    {
+        "name": "Manos",
+        "country": "Greece",
+        "gender": "Man",
+        "age": 29,
+        "sport": "Boxing",
+        "interests": "I am really an outdoors person. That is why I really like exercising in the open air. I prefer to do intensive boxing. I am still looking for a buddy to spar with.",
+        "like": true
+    },
+    {
+        "name": "Charlotte",
+        "country": "England",
+        "gender": "Vrouw",
+        "age": 26,
+        "sport": "Volleyball",
+        "interests": "Because I have a very busy life, I have little time to exercise. Since I don't like to exercise alone, I do it even less. That is why I am looking for someone to be able to enjoy sports with from time to time.",
+        "like": false
+    }
+]

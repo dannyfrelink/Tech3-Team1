@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('layout/head'); %>
+    </head>
+    <body class="profile">
+        <%- include('layout/header'); %>
+        <h2>Your profile</h2>
+        <form action="/profile" method="POST" enctype="multipart/form-data">
+            <div>
+                <% if(personalDB) { %> 
+                    <input type="file" id="image" name="image" value="image" accept="image/*">
+                    <label for="image"><img src="<%- personalDB.document.image %>" alt="profielfoto"></label>
+                    <label for="image">Change photo</label>
+                <% } else { %>
+                    <input type="file" id="image" name="image" value="image" accept="image/*" required>
+                    <label for="image"><p>+</p></label>
+                    <label for="image">Upload photo</label>
+                <% }; %>
+            </div>
+
+            <div>
+                <label>Name</label>
+                <% if(personalDB) { %> 
+                    <input type="text" id="name" name="name" value="<%- personalDB.document.name %>">
+                <% } else { %>
+                    <input type="text" id="name" name="name" placeholder="First name + Last name" required>
+                <% }; %>
+            </div>
+
+            <div>
+                <label>Country</label>
+                <select name="countries" required>
+                    <% if(personalDB) { %> 
+                        <option value="<%- personalDB.document.countries %>" hidden><%- personalDB.document.countries %></option>
+                    <% } else { %>
+                        <option value="" hidden>Select your country</option>
+                    <% }; %>
+                    <% countries.forEach(function(countries) { %>
+                        <% if(countries.continent === 'EU') { %>
+                            <option value="<%= countries.name %>">
+                                <%= countries.name %>
+                            </option>
+                        <% }; %>
+                    <% }); %>
+                </select>
+            </div>
+
+            <div>
+                <label>Gender</label>
+                <select name="gender" required>
+                    <% if(personalDB) { %> 
+                        <option value="<%- personalDB.document.gender %>" hidden><%- personalDB.document.gender %></option>
+                    <% } else { %>
+                        <option value="" hidden>Select your gender</option>
+                    <% }; %>
+                    <option value="Man">Man</option>
+                    <option value="Woman">Woman</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Date of birth</label>
+                <% if(personalDB) { %> 
+                    <input value="<%- personalDB.document.birthdate %>" name="date" type="text" onfocus="(this.type='date')" id="date">
+                <% } else { %>
+                    <input type="date" id="date" name="date" min="1950-01-01" max="2003-03-31" required>
+                <% }; %>
+            </div>
+
+            <div>
+                <label>Favorite sport</label>
+                <select name="sports" required>
+                    <% if(personalDB) { %> 
+                        <option value="<%- personalDB.document.sports %>" hidden><%- personalDB.document.sports %></option>
+                    <% } else { %>
+                        <option value="" hidden>Select your favorite sport</option>
+                    <% }; %>
+                    <option value="American football">American Football</option>
+                    <option value="Athletics">Athletics</option>
+                    <option value="Badminton">Badminton</option>
+                    <option value="Baseball">Baseball</option>
+                    <option value="Basketball">Basketball</option>
+                    <option value="Boxing">Boxing</option>
+                    <option value="Cricket">Cricket</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Golf">Golf</option>
+                    <option value="Gymnastics">Gymnastics</option>
+                    <option value="Handball">Handball</option>
+                    <option value="Hockey">Hockey</option>
+                    <option value="Ice Hockey">Ice Hockey</option>
+                    <option value="Rugby">Rugby</option>
+                    <option value="Snooker">Snooker</option>
+                    <option value="Soccer">Soccer</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Table tennis">Table Tennis</option>
+                    <option value="Tennis">Tennis</option>
+                    <option value="Volleyball">Volleyball</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Your interests</label>
+                <% if(personalDB) { %> 
+                    <textarea id="interests" name="interests"><%- personalDB.document.interests %></textarea>
+                <% } else { %>
+                    <textarea id="interests" name="interests" placeholder="Tell something about yourself..." required></textarea>
+                <% }; %>
+            </div>
+
+            <% if(personalDB) { %>
+                <button>Edit profile</button>
+            <% } else { %>
+                <button>Make profile</button>
+            <% }; %>
+
+        </form>
+        <%- include('layout/footer'); %>
+        <script src="/js/script.js"></script>
+    </body>
+</html>
