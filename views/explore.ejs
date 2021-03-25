@@ -1,6 +1,6 @@
 
-<%- include('includes/head'); %>
-<%- include('includes/header'); %>
+<%- include('layout/head'); %>
+<%- include('layout/header'); %>
 <!-- header -->
 
 <body class="explore">
@@ -47,7 +47,7 @@
                 </span>
               </button>
             <% } else { %>
-              <a class="dislike-button" href="/profile">
+              <a class="like-button" href="/profile">
                 <span class="material-icons md-36">
                 favorite
                 </span>
@@ -69,7 +69,7 @@
     </ul>
   </section>
 
-  <%- include('includes/footer'); %>
+  <%- include('layout/footer'); %>
 
 
 <!-- filter page -->
@@ -150,7 +150,7 @@
     </div>  
   </form>
 </article>
-<script src="scripts/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 
    

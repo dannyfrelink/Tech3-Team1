@@ -141,12 +141,14 @@ app.get('/profile', async (req, res) => {
 });
 
 app.post('/', async (req, res) => {
+	let personalDB;
 	let queryArray = [];
 	const id = new ObjectID(req.body.id);
 	
 	try {
 		await db.collection('profile').updateOne({'_id':id}, {$set:{'like':null}});
 		profiles = await db.collection('profile').find({like:false}).toArray();
+		personalDB = await db.collection('personal').findOne({});
 	} 
 	catch (error) {
 		console.error('Error:', error);
@@ -194,19 +196,22 @@ app.post('/', async (req, res) => {
 		countries, 
 		profile,
 		queries: req.query,
-		selectedQueries
+		selectedQueries, 
+		personalDB
 	});
 });
 
 // rendered post page
 // form method="post"
 app.post('/liked', async (req, res) => {
+	let personalDB; 
 	let queryArray = [];
 	const id = new ObjectID(req.body.id);
 	
 	try {
 		await db.collection('profile').updateOne({'_id':id}, {$set:{'like':true}});
 		profiles = await db.collection('profile').find({like:false}).toArray();
+		personalDB = await db.collection('personal').findOne({});
 	} 
 	catch (error) {
 		console.error('Error:', error);
@@ -254,10 +259,12 @@ app.post('/liked', async (req, res) => {
 		countries, 
 		profile,
 		queries: req.query,
-		selectedQueries
+		selectedQueries,
+		personalDB
 	});
+});	
   
-  app.post('/profile', upload.single('image'), async (req, res) => {
+app.post('/profile', upload.single('image'), async (req, res) => {
 	let personalDB;
 
 	if(req.file) {
@@ -279,7 +286,7 @@ app.post('/liked', async (req, res) => {
 			console.error('Error:', error);
 		}
 	} 
-	else{
+	else {
 		try {
 			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
 			const img = personalDB.document.image;
@@ -302,4 +309,4 @@ app.use(function (req, res) {
 
 app.listen(port, () => {
 	console.log(`Listening on port: ${port}`);
-});
+}) 
