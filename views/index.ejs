@@ -19,11 +19,11 @@
     <ul class="cards">
       <% if (locals.profile) { %>
         <li>
-          <div>
+          <section>
           <p><%- profile.name %>, <%- profile.age %></p>
           <p><%- profile.sport %></p>
           <p><%- profile.interests %></p>
-          </div>
+          </section>
           <form action="<%= selectedQueries ? `/${selectedQueries}` : '/' %>" method="POST">
             <button class="dislike-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
               close
@@ -74,9 +74,7 @@
     <div>
     <label for="sport">Favorite Sports</label>
       <select id="sport" name="sport" required>
-
       <option value="<%= queries.sport ? queries.sport : 'All' %>" hidden><%= queries.sport ? queries.sport : 'All' %></option>
-        
       <option>All</option>
       <option value="American football">American Football</option>
       <option value="Athletics">Athletics</option>
@@ -125,7 +123,7 @@
       <option value="Other">Other</option>
     </select>
     <input type="submit" value="APPLY FILTERS">
-    </div>
+    </div>  
   </form>
 </article>
 <script src="scripts/script.js"></script>
