@@ -104,6 +104,9 @@ h1{
     justify-content: center;
 }
 
+.material-icons.md-36 { font-size: 36px; }
+.material-icons {font-weight: bold;}
+
 footer{
     display:flex; 
     justify-content: space-around;
