@@ -68,7 +68,8 @@ ul li:hover{
 
 /* slider */
 .container{
-    background-color:lightgray;
+    color:white;
+    background-color:#8eb3f8;
     border-radius:1em;
     width:50%;
     margin:0 auto;
@@ -79,19 +80,23 @@ ul li:hover{
 #likes, #matches{
     text-align:center;
     font-size:1.5em;
-    padding:.5em;
     border-radius:.5em;
+    
+    
    
  
 }
 
 .like{
-    background-color:darkgray;
-    transition:.5s;
+    background-color:#5A7DEC;
+    transition:.1s;
+    padding:0 1em;
+
 }
 .match{
-    background-color:darkgray;
-    transition:.5s;
+    background-color:#5A7DEC;
+    transition:.1s;
+    padding:0 1em;
 }
 
 /* einde slider */
