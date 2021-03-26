@@ -12,6 +12,7 @@ Welkom bij de Readme van onze repository voor Blok Tech. Hier is alle informatie
 Voor dit project hebben wij de opdracht gekregen om onze individuele features van een matching applicatie samen te voegen om één applicatie te maken. Hiervoor werden wij vrij gelaten om zelf te bepalen welke onderdelen wij wilde gebruiken en welk onderwerp wij wilde kiezen.
 
 ## Concept
+![alt text](https://github.com/dannyfrelink/Tech3-Team1/blob/kath/public/images/wiki/match.svg)
 
 Voor ons concept hebben wij besloten om ons te richten op de doelgroep Sporters. Er zijn veel sporters die niemand hebben om samen mee te sporten, maar het wel heel leuk zouden vinden om het samen te doen. Om deze reden lijkt het ons leuk om mensen te laten matchen op dezelfde sportinteresses, zodat zij in de toekomst samen zouden kunnen sporten. Wij hebben ons gericht op de volgende Job Stories:
 
