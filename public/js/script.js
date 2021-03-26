@@ -11,7 +11,7 @@ if (filterButton){
 function filterSlide () {
 	const filter = document.querySelector('.filters-hidden');
 	filter.classList.add('filters-show');
-};
+}
 
 // filter page hide
 
@@ -23,7 +23,7 @@ if (closeFilterButton){
 function closeFilterScreen () {
 	const filter = document.querySelector('.filters-hidden');
 	filter.classList.remove('filters-show');
-};
+}
 
 const inputFile = document.querySelector('input[type="file"]');
 const imgPreview = document.querySelector('form div:first-of-type label:first-of-type');
