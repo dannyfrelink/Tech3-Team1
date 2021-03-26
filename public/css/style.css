@@ -112,7 +112,7 @@ html {
     overflow-x: hidden;
 }
 
-.header{
+header{
     background-color: #5A7DEC;
     width:100%;
     height:10vh;
@@ -120,7 +120,7 @@ html {
     top:0;
     clip-path: polygon(0 0, 100% 100%, 100% 0);
 }
-.profile .header {
+.profile header {
     position: absolute;
 }
 
@@ -372,6 +372,78 @@ a {
 .explore output {
     font-family: "Poppins", sans-serif;
 }
+
+body.likes {
+width:100%;
+height:auto;
+font-family: Dosis;
+padding:0; margin:0;
+}
+.likes div{
+display:flex;
+justify-content: center;
+}
+ul{
+-webkit-perspective: 200;
+height:auto;
+list-style-type:none;
+padding:0;
+margin:7.5em auto 5em;
+width:80%;
+display:flex;
+flex-direction:column;
+}
+ul li{
+/* border-bottom:1em solid #C1D8FF; */
+-webkit-transform: rotateX(.5deg);
+border-radius:1em;
+margin-bottom:1.5em;
+display:flex;
+box-shadow:0px 4px 1px black;
+background-color:#DFEAFD;
+}
+ul li img{
+margin-right:1em;
+height:10vh;
+padding:.5em;
+}
+ul li p{
+padding:0;
+font-size:1.5em;
+align-self:center;
+}
+p{
+text-align:center;
+}
+ul li:hover{
+background-color:#8eb3f8;
+}
+/* slider */
+.container{
+color:white;
+background-color:#8eb3f8;
+border-radius:1em;
+width:50%;
+margin:0 auto;
+display:flex;
+justify-content: space-evenly;
+}
+#likes, #matches{
+text-align:center;
+font-size:1.5em;
+border-radius:.5em;
+}
+.like{
+background-color:#5A7DEC;
+transition:.1s;
+padding:0 1em;
+}
+.match{
+background-color:#5A7DEC;
+transition:.1s;
+padding:0 1em;
+}
+/* einde slider */
 
 body.profile {
   overflow-x: hidden;

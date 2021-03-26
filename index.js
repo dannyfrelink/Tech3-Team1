@@ -64,6 +64,7 @@ const upload = multer({
 	storage: storage
 });
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -127,6 +128,16 @@ app.get('/', async (req, res) => {
 		selectedQueries,
 		personalDB
 	});
+});
+
+app.get('/likes', async (req, res) => {
+    let people = {}
+    people = await db.collection("profile").find({like:true}).toArray();
+    res.render('like', {
+      title:'Likes & Matches',
+      results: people.length,
+      people
+    });
 });
 
 app.get('/profile', async (req, res) => {

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="573" height="485" viewBox="0 0 573 485">
+  <g id="Group_2" data-name="Group 2" transform="translate(-1610 -1549)">
+    <g id="Rectangle_28" data-name="Rectangle 28" transform="translate(1610 1549)" fill="#141414" stroke="#707070" stroke-width="1">
+      <rect width="573" height="485" stroke="none"/>
+      <rect x="0.5" y="0.5" width="572" height="484" fill="none"/>
+    </g>
+    <text id="Font:_Dosis_H1_-_Dosis_bold_H2_-Dosis_semiBold_P_-_Dosis_Regular_Figcaption_-_Dosis_ExtraLight_" data-name="Font: Dosis
+
+H1 - Dosis bold
+H2 -Dosis semiBold
+P - Dosis Regular
+Figcaption - Dosis ExtraLight
+
+" transform="translate(1683 1610)" fill="#fff" font-size="40" font-family="Dosis"><tspan x="133.36" y="41">Font: Dosis</tspan><tspan x="214" y="91"></tspan><tspan x="99.42" y="141">H1 - </tspan><tspan y="141" font-weight="700">Dosis bold</tspan><tspan x="62.06" y="191">H2 -</tspan><tspan y="191" font-weight="600">Dosis semiBold</tspan><tspan x="85.6" y="241">P - Dosis Regular</tspan><tspan x="79.4" y="291">Figcaption - </tspan><tspan y="291" font-weight="500">Dosis </tspan><tspan x="134.94" y="341" font-weight="500">ExtraLight</tspan></text>
+  </g>
+</svg>
