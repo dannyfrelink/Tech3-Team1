@@ -393,17 +393,19 @@ body.likes {
 }
 
 .likes ul{
--webkit-perspective: 200;
-height:auto;
-list-style-type:none;
-padding:0;
-margin:4em auto 5em;
-width:80%;
-display:flex;
-flex-direction:column;
+    perspective: 200;
+    -webkit-perspective: 200;
+    height:auto;
+    list-style-type:none;
+    padding:0;
+    margin:4em auto 5em;
+    width:80%;
+    display:flex;
+    flex-direction:column;
 }
 
 .likes ul li{
+    transform: rotateX(.5deg);
     -webkit-transform: rotateX(.5deg);
     border-radius:1em;
     margin-bottom:1.5em;
