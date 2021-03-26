@@ -69,6 +69,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+function sum(a, b) {
+	return a + b;
+}
+module.exports= sum;
+
 // rendered page
 app.get('/', async (req, res) => {
 	let profiles;
