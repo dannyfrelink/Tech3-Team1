@@ -1,0 +1,153 @@
+<%- include('layout/head'); %>
+<%- include('layout/header'); %>
+<!-- header -->
+
+<body class="explore">
+<main>
+  <section class="logo">
+  <h1>Exploring</h1>
+  <h2>Meet your Sport buddy!</h2>
+  </section>
+  <!-- groups -->
+  <section>
+    <div class="filter-container">
+    <h2 class="filter-results">Filter results: <%- profilesLength %></h2>
+    <button class="filter-button"><span class="material-icons md-36">
+      filter_alt
+      </span></button>
+  </div>
+    
+    <ul class="cards">
+      <% if (locals.profile) { %>
+        <li>
+          <section>
+          <p><%- profile.name %>, <%- profile.age %></p>
+          <p><%- profile.sport %></p>
+          <p><%- profile.interests %></p>
+          </section>
+          <form action="<%= selectedQueries ? `/${selectedQueries}` : '/' %>" method="POST">
+            <% if(personalDB) { %>
+              <button class="dislike-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
+                close
+                </span></button>
+            <% } else { %>
+              <a class="dislike-button" href="/profile">
+                <span class="material-icons md-36">
+                close
+                </span>
+              </a>
+            <% }; %>
+          </form>
+          <form action="<%= selectedQueries ? `/liked${selectedQueries}` : '/liked' %>" method="POST">
+            <% if(personalDB) { %>
+              <button class="like-button" type="submit" name="id" value="<%= profile._id %>">
+                <span class="material-icons md-36">
+                favorite
+                </span>
+              </button>
+            <% } else { %>
+              <a class="like-button" href="/profile">
+                <span class="material-icons md-36">
+                favorite
+                </span>
+              </a>
+            <% }; %>
+
+            <button class="like-button" type="submit" name="id" value="<%= profile._id %>"><span class="material-icons md-36">
+              favorite
+              </span></button>
+          </form>
+        </li>
+      <% } else { %>
+        <p>No profiles found</p>
+      <% } %>
+    
+    </ul>
+  </section>
+</main>
+    </ul>
+  </section>
+
+  <%- include('layout/footer'); %>
+
+
+<!-- filter page -->
+<article class="filters-hidden">
+  <nav>
+    <ul>
+      <li>
+        <button class="close-filter"><span class="material-icons md-24">
+          close
+          </span></button>
+          </button>
+      </li>
+      <li>
+        <h2>filters</h2>
+      </li>
+      <li>
+        <!-- Bron: reset te page, stackoverflow: https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click-->
+        <button onclick="window.location.href=window.location.href"><span class="material-icons md-24">
+          restart_alt
+          </span></button>
+      </li>
+    </ul>
+  </nav>
+  <!-- filter form (inputs)-->
+  <form class="form" action="/" method="GET">
+    <div>
+    <label for="sport">Favorite Sports</label>
+      <select id="sport" name="sport" required>
+      <option value="<%= queries.sport ? queries.sport : 'All' %>" hidden><%= queries.sport ? queries.sport : 'All' %></option>
+      <option>All</option>
+      <option value="American football">American Football</option>
+      <option value="Athletics">Athletics</option>
+      <option value="Badminton">Badminton</option>
+      <option value="Baseball">Baseball</option>
+      <option value="Basketball">Basketball</option>
+      <option value="Boxing">Boxing</option>
+      <option value="Cricket">Cricket</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Golf">Golf</option>
+      <option value="Gymnastics">Gymnastics</option>
+      <option value="Handball">Handball</option>
+      <option value="Hockey">Hockey</option>
+      <option value="Ice Hockey">Ice Hockey</option>
+      <option value="Rugby">Rugby</option>
+      <option value="Snooker">Snooker</option>
+      <option value="Soccer">Soccer</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Table tennis">Table Tennis</option>
+      <option value="Tennis">Tennis</option>
+      <option value="Volleyball">Volleyball</option>
+    </select>
+    <label for="age">Age (max)</label>
+    <!-- automatic value change, stackoverflow: https://stackoverflow.com/questions/44675522/get-the-text-value-of-a-select-created-dynamically-->
+      <input id="age" type="range" name="age" min="18" max="75" step="1" value="<%= queries.age ? queries.age : '75' %>" oninput="this.nextElementSibling.value = this.value">
+      <output><%= queries.age ? queries.age : '75' %></output>
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="<%= queries.country ? queries.country : 'All' %>" hidden><%= queries.country ? queries.country : 'All' %></option>
+      <option>All</option>
+      <% countries.forEach(function(countries) { %>
+      <% if(countries.continent === 'EU') { %>
+      <option value="<%= countries.name %>">
+      <%= countries.name %>
+      </option>
+      <% }; %>
+      <% }); %> 
+    </select>
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+      <option value="<%= queries.gender ? queries.gender : 'All' %>" hidden><%= queries.gender ? queries.gender : 'All' %></option>
+      <option>All</option>
+      <option value="Man">Man</option>
+      <option value="Woman">Woman</option>
+      <option value="Other">Other</option>
+    </select>
+    <input type="submit" value="APPLY FILTERS">
+    </div>  
+  </form>
+</article>
+<script src="js/script.js"></script>
+</body>

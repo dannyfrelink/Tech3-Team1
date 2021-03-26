@@ -1,17 +1,18 @@
 const express = require('express');
 /* eslint-disable-next-line no-unused-vars */
-const ejs = require('ejs');
 const app = express();
 const port = 5555;
 const countriesList = require('countries-list');
-const countries = Object.values(countriesList.countries);
+const countries = Object.values(countriesList.countries); 
+const { ObjectID } = require('mongodb');
+/* eslint-disable-next-line no-unused-vars */
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 /* eslint-disable-next-line no-unused-vars */
 const FileReader = require('filereader');
 /* eslint-disable-next-line no-unused-vars */
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
 const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URI}`;
@@ -63,10 +64,217 @@ const upload = multer({
 	storage: storage
 });
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+// rendered page
+app.get('/', async (req, res) => {
+	let profiles;
+	let queryArray = [];
+	let personalDB;
+
+	try {
+		profiles = await db.collection('profile').find({like:false}).toArray();
+		personalDB = await db.collection('personal').findOne({});
+	}    
+	catch (error) {
+		console.error('Error:', error);
+	}
+
+	// filter criteria
+	if (Object.keys(req.query).length) {
+		if (req.query.sport !== 'All') {
+			profiles = profiles.filter(profile => { return profile.sport == req.query.sport; });
+			queryArray.push(`sport=${req.query.sport}`);
+		}
+		else {
+			queryArray.push(`sport=${req.query.sport}`);
+		}
+		if (req.query.age !== 'All') {
+			profiles = profiles.filter(profile => { return profile.age <= req.query.age; });
+			queryArray.push(`age=${req.query.age}`);
+		}
+		else {
+			queryArray.push(`age=${req.query.age}`);
+		}
+		if (req.query.country !== 'All') {
+			profiles = profiles.filter(profile => { return profile.country == req.query.country; });
+			queryArray.push(`country=${req.query.country}`);
+		}
+		else {
+			queryArray.push(`country=${req.query.country}`);
+		}
+		if (req.query.gender !== 'All') {
+			profiles = profiles.filter(profile => { return profile.gender == req.query.gender; });
+			queryArray.push(`gender=${req.query.gender}`);
+		}
+		else {
+			queryArray.push(`gender=${req.query.gender}`);
+		}
+	}
+
+	const selectedQueries = queryArray.length && `?${queryArray.join('&')}`;
+
+	profile = await profiles[0];
+
+	res.render('explore', {
+		title: 'Sportbuddy',
+		profilesLength: profiles.length,
+		countries,
+		profile,
+		queries: req.query,
+		selectedQueries,
+		personalDB
+	});
+});
+
+app.get('/likes', async (req, res) => {
+    let people = {}
+    people = await db.collection("profile").find({like:true}).toArray();
+    res.render('like', {
+      title:'Likes & Matches',
+      results: people.length,
+      people
+    });
+});
+
+app.get('/profile', async (req, res) => {
+	let personalDB;
+	try {
+		personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
+	}
+	catch (error) {
+		console.error('Error:', error);
+	}
+	res.render('profile', { title: 'Profile', personalDB, countries });
+});
+
+app.post('/', async (req, res) => {
+	let personalDB;
+	let queryArray = [];
+	const id = new ObjectID(req.body.id);
+	
+	try {
+		await db.collection('profile').updateOne({'_id':id}, {$set:{'like':null}});
+		profiles = await db.collection('profile').find({like:false}).toArray();
+		personalDB = await db.collection('personal').findOne({});
+	} 
+	catch (error) {
+		console.error('Error:', error);
+	}
+
+	// filter criteria
+	if (Object.keys(req.query).length) {
+		if (req.query.sport !== 'All') {
+			profiles = profiles.filter(profile => { return profile.sport == req.query.sport; });
+			queryArray.push(`sport=${req.query.sport}`);
+		}
+		else {
+			queryArray.push(`sport=${req.query.sport}`);
+		}
+		if (req.query.age !== 'All') {
+			profiles = profiles.filter(profile => { return profile.age <= req.query.age; });
+			queryArray.push(`age=${req.query.age}`);
+		}
+		else {
+			queryArray.push(`age=${req.query.age}`);
+		}
+		if (req.query.country !== 'All') {
+			profiles = profiles.filter(profile => { return profile.country == req.query.country; });
+			queryArray.push(`country=${req.query.country}`);
+		}
+		else {
+			queryArray.push(`country=${req.query.country}`);
+		}
+		if (req.query.gender !== 'All') {
+			profiles = profiles.filter(profile => { return profile.gender == req.query.gender; });
+			queryArray.push(`gender=${req.query.gender}`);
+		}
+		else {
+			queryArray.push(`gender=${req.query.gender}`);
+		}
+	}
+
+	const selectedQueries = queryArray.length && `?${queryArray.join('&')}`;
+
+	profile = await profiles[0];
+
+	res.render('explore', {
+		title: 'SportBuddy',
+		profilesLength: profiles.length,
+		countries, 
+		profile,
+		queries: req.query,
+		selectedQueries, 
+		personalDB
+	});
+});
+
+// rendered post page
+// form method="post"
+app.post('/liked', async (req, res) => {
+	let personalDB; 
+	let queryArray = [];
+	const id = new ObjectID(req.body.id);
+	
+	try {
+		await db.collection('profile').updateOne({'_id':id}, {$set:{'like':true}});
+		profiles = await db.collection('profile').find({like:false}).toArray();
+		personalDB = await db.collection('personal').findOne({});
+	} 
+	catch (error) {
+		console.error('Error:', error);
+	}
+
+	// filter criteria
+	if (Object.keys(req.query).length) {
+		if (req.query.sport !== 'All') {
+			profiles = profiles.filter(profile => { return profile.sport == req.query.sport; });
+			queryArray.push(`sport=${req.query.sport}`);
+		}
+		else {
+			queryArray.push(`sport=${req.query.sport}`);
+		}
+		if (req.query.age !== 'All') {
+			profiles = profiles.filter(profile => { return profile.age <= req.query.age; });
+			queryArray.push(`age=${req.query.age}`);
+		}
+		else {
+			queryArray.push(`age=${req.query.age}`);
+		}
+		if (req.query.country !== 'All') {
+			profiles = profiles.filter(profile => { return profile.country == req.query.country; });
+			queryArray.push(`country=${req.query.country}`);
+		}
+		else {
+			queryArray.push(`country=${req.query.country}`);
+		}
+		if (req.query.gender !== 'All') {
+			profiles = profiles.filter(profile => { return profile.gender == req.query.gender; });
+			queryArray.push(`gender=${req.query.gender}`);
+		}
+		else {
+			queryArray.push(`gender=${req.query.gender}`);
+		}
+	}
+
+	const selectedQueries = queryArray.length && `?${queryArray.join('&')}`;
+
+	profile = await profiles[0];
+
+	res.render('explore', {
+		title: 'SportBuddy',
+		profilesLength: profiles.length,
+		countries, 
+		profile,
+		queries: req.query,
+		selectedQueries,
+		personalDB
+	});
+});	
+  
 app.post('/profile', upload.single('image'), async (req, res) => {
 	let personalDB;
 
@@ -89,7 +297,7 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 			console.error('Error:', error);
 		}
 	} 
-	else{
+	else {
 		try {
 			personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
 			const img = personalDB.document.image;
@@ -106,21 +314,11 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 	res.render('profile', { title: 'Profile', personalDB, countries });
 });
 
-app.get('/profile', async (req, res) => {
-	let personalDB;
-	try {
-		personalDB = await personal.findOne({}, { sort: { _id: -1 }, limit: 1 });
-	}
-	catch (error) {
-		console.error('Error:', error);
-	}
-	res.render('profile', { title: 'Profile', personalDB, countries });
-});
-
 app.use(function (req, res) {
 	res.status(404).send('Sorry, could not find this page.');
 });
 
 app.listen(port, () => {
 	console.log(`Listening on port: ${port}`);
-});
+}) 
+
