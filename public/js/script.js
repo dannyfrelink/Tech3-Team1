@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 // filter page show
 
@@ -8,9 +9,9 @@ if (filterButton){
 }
 
 function filterSlide () {
-  const filter = document.querySelector('.filters-hidden');
-  filter.classList.add('filters-show');
-};
+	const filter = document.querySelector('.filters-hidden');
+	filter.classList.add('filters-show');
+}
 
 // filter page hide
 
@@ -20,12 +21,9 @@ if (closeFilterButton){
 	closeFilterButton.addEventListener('click', closeFilterScreen);
 }
 function closeFilterScreen () {
-  const filter = document.querySelector('.filters-hidden');
-  filter.classList.remove('filters-show');
-};
-
-
-/* eslint-disable no-undef */
+	const filter = document.querySelector('.filters-hidden');
+	filter.classList.remove('filters-show');
+}
 
 const inputFile = document.querySelector('input[type="file"]');
 const imgPreview = document.querySelector('form div:first-of-type label:first-of-type');
