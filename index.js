@@ -14,6 +14,7 @@ const FileReader = require('filereader');
 /* eslint-disable-next-line no-unused-vars */
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
+module.exports = app.listen(5555);
 
 const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URI}`;
 
@@ -68,11 +69,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-
-function sum(a, b) {
-	return a + b;
-}
-module.exports= sum;
 
 // rendered page
 app.get('/', async (req, res) => {
@@ -323,7 +319,7 @@ app.use(function (req, res) {
 	res.status(404).send('Sorry, could not find this page.');
 });
 
-app.listen(port, () => {
-	console.log(`Listening on port: ${port}`);
-}) 
+// app.listen(port, () => {
+// 	console.log(`Listening on port: ${port}`);
+// }) 
 

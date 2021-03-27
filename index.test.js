@@ -1,5 +1,7 @@
-const sum = require('./index');
+const request = require('supertest');
+const index = require('./index');
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
-  });
+test('should render profiles', async () => {
+  await request(index).get('/explore')
+  expect(201)
+})
