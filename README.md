@@ -29,7 +29,7 @@ Wanneer ik een ander profiel leuk vind, wil ik deze kunnen liken, zodat ik met d
 
 Wij hebben ervoor gekozen om ons te richten op drie verschillende features voor onze applicatie. We willen er allereerst voor zorgen dat de gebruikers een profiel kunnen aanmaken. Vervolgens komen zij terecht op de pagina met zoekresultaten. Hierop kunnen zij gaan filteren, zodat de zoekopdracht wordt aangepast aan de wensen van de gebruiker. Wanneer de zoekresultaten zijn aangepast, kan de gebruiker beginnen met het liken van andere profielen die voor hun aanspreken.
 
-![alt text](https://github.com/dannyfrelink/Tech3-Team1/blob/kath/public/images/wiki/flow.svg)
+![alt text](https://github.com/dannyfrelink/Tech3-Team1/blob/kath/public/images/wiki/flow.png)
 
 ## Installeren
 Om gebruik te kunnen maken van onze repository moet je eerst de Github page clonen:
