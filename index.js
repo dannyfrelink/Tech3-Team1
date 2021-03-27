@@ -1,7 +1,6 @@
 const express = require('express');
 /* eslint-disable-next-line no-unused-vars */
 const app = express();
-const port = 5555;
 const countriesList = require('countries-list');
 const countries = Object.values(countriesList.countries); 
 const { ObjectID } = require('mongodb');
@@ -118,7 +117,7 @@ app.get('/', async (req, res) => {
 
 	const selectedQueries = queryArray.length && `?${queryArray.join('&')}`;
 
-	profile = await profiles[0];
+	const profile = await profiles[0];
 
 	res.render('explore', {
 		title: 'Sportbuddy',
@@ -132,13 +131,13 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/likes', async (req, res) => {
-    let people = {}
-    people = await db.collection("profile").find({like:true}).toArray();
-    res.render('like', {
-      title:'Likes & Matches',
-      results: people.length,
-      people
-    });
+	let people = {};
+	people = await db.collection('profile').find({like:true}).toArray();
+	res.render('like', {
+		title:'Likes & Matches',
+		results: people.length,
+		people
+	});
 });
 
 app.get('/profile', async (req, res) => {
@@ -154,6 +153,7 @@ app.get('/profile', async (req, res) => {
 
 app.post('/', async (req, res) => {
 	let personalDB;
+	let profiles;
 	let queryArray = [];
 	const id = new ObjectID(req.body.id);
 	
@@ -200,7 +200,7 @@ app.post('/', async (req, res) => {
 
 	const selectedQueries = queryArray.length && `?${queryArray.join('&')}`;
 
-	profile = await profiles[0];
+	const profile = await profiles[0];
 
 	res.render('explore', {
 		title: 'SportBuddy',
@@ -216,7 +216,8 @@ app.post('/', async (req, res) => {
 // rendered post page
 // form method="post"
 app.post('/liked', async (req, res) => {
-	let personalDB; 
+	let personalDB;
+	let profiles;
 	let queryArray = [];
 	const id = new ObjectID(req.body.id);
 	
@@ -263,7 +264,7 @@ app.post('/liked', async (req, res) => {
 
 	const selectedQueries = queryArray.length && `?${queryArray.join('&')}`;
 
-	profile = await profiles[0];
+	const profile = await profiles[0];
 
 	res.render('explore', {
 		title: 'SportBuddy',
@@ -318,8 +319,3 @@ app.post('/profile', upload.single('image'), async (req, res) => {
 app.use(function (req, res) {
 	res.status(404).send('Sorry, could not find this page.');
 });
-
-// app.listen(port, () => {
-// 	console.log(`Listening on port: ${port}`);
-// }) 
-
