@@ -137,7 +137,6 @@ a {
   background-color: #5A7DEC;
   padding: 0.3em 0.8em;
   border-radius: 20%;
-  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.12);
 }
 .positionBottom {
@@ -169,6 +168,7 @@ header {
   height: 10vh;
   left: 0;
   top: 0;
+  -webkit-clip-path: polygon(0 0, 100% 100%, 100% 0);
   clip-path: polygon(0 0, 100% 100%, 100% 0);
 }
 .profile header {
@@ -211,6 +211,8 @@ header {
 }
 .explore section:nth-of-type(2) > ul {
   margin-left: 0.5em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .explore section:nth-of-type(2) ul li {
@@ -232,7 +234,6 @@ header {
   background-color: #5A7DEC;
   padding: 0.3em 0.8em;
   border-radius: 20%;
-  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.12);
 }
 .explore .like-button {
@@ -466,6 +467,7 @@ header {
   line-height: 1.7em;
 }
 .profile form div:first-of-type label img {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 1.6em;
 }
@@ -492,7 +494,6 @@ footer {
   background-color: #ffffff;
   width: 100%;
   padding: 0.4em;
-  -webkit-box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
   box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
 }
 footer span {

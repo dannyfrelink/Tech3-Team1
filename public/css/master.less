@@ -62,8 +62,7 @@ a {
     border: none;
     background-color:@primary-color;
     padding: .3em .8em;
-    border-radius: 20%;
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12); 
+    border-radius: 20%; 
     box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12);
 }
 
@@ -91,7 +90,8 @@ header{
     height: 10vh;
     left: 0; 
     top: 0; 
-    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    -webkit-clip-path: polygon(0 0, 100% 100%, 100% 0); 
+            clip-path: polygon(0 0, 100% 100%, 100% 0);
 }
 
 .profile{
@@ -140,6 +140,8 @@ header{
 
     section:nth-of-type(2) > ul  {
         margin-left: .5em; 
+        width: -webkit-fit-content; 
+        width: -moz-fit-content; 
         width: fit-content;
     }
 
@@ -421,7 +423,8 @@ header{
 
             }
             img{
-                object-fit: cover;
+                -o-object-fit: cover;
+                   object-fit: cover;
                 width: 1.6em;
                 }
             }
@@ -452,8 +455,7 @@ footer {
     bottom:0; 
     background-color: @white-space; 
     width: @width; 
-    padding: .4em; 
-    -webkit-box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
+    padding: .4em;
     box-shadow: 0px -2px 6px -4px rgba(0, 0, 0, 0.3);
     span{
         color:@primary-color;
