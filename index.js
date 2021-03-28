@@ -15,7 +15,8 @@ const FileReader = require('filereader');
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 module.exports = app.listen(5555);
-
+const helmet = require("helmet");
+app.use(helmet());
 const dbURL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_URI}`;
 
 let db;
