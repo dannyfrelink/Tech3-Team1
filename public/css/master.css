@@ -317,7 +317,7 @@ header {
   height: 3em;
   border: solid 1px #5A7DEC;
   border-radius: 3px;
-  background-color: white;
+  background-color: #ffffff;
   text-align: center;
   display: block;
 }
@@ -448,11 +448,13 @@ header {
 }
 .profile form div:first-of-type label:nth-of-type(2) {
   max-height: 4.925em;
+  margin-left: 0.5em;
+  text-decoration: underline;
 }
 .profile form div:first-of-type label p,
 .profile form div:first-of-type label img {
-  background-color: white;
-  border: 1px solid black;
+  background-color: #ffffff;
+  border: 1px solid #000000;
   border-radius: 0.25em;
   font-size: 3em;
   height: 1.6em;
@@ -471,8 +473,8 @@ header {
   height: 7em;
 }
 .profile form button {
-  background-color: #F26A6B;
-  color: white;
+  background-color: #FF6A6A;
+  color: #ffffff;
   border: none;
   border-radius: 0.25em;
   width: 70vw;

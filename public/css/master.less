@@ -60,7 +60,7 @@ a {
     position:absolute; 
     bottom: 2%;
     border: none;
-    background-color:#5A7DEC;
+    background-color:@primary-color;
     padding: .3em .8em;
     border-radius: 20%;
     -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.12); 
@@ -259,9 +259,9 @@ header{
     form input, select{
         width: 25em;
         height: 3em;
-        border: solid 1px #5A7DEC;
+        border: solid 1px @primary-color;
         border-radius: 3px;
-        background-color: white;
+        background-color: @white-space;
         text-align: center;
         display: block;
     }
@@ -401,12 +401,14 @@ header{
             margin-bottom: 1em; 
             label:nth-of-type(2){
                 max-height: 4.925em;
+                margin-left: .5em; 
+                text-decoration: underline;
             }
         
         label{
             p, img{
-                background-color: white;
-                border: 1px solid black;
+                background-color: @white-space;
+                border: 1px solid @text-color;
                 border-radius: 0.25em;
                 font-size: 3em;
                 height: 1.6em;
@@ -428,8 +430,8 @@ header{
             height: 7em;
         }
         button{
-            background-color: #F26A6B;
-            color: white;
+            background-color: @call-to-action-color;
+            color: @white-space;
             border: none;
             border-radius: 0.25em;
             width: 70vw;
@@ -439,12 +441,7 @@ header{
             justify-content: center;
         }
     }
-
 }
-
-
-
-
 
 // Footer
 footer {
