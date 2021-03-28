@@ -112,18 +112,6 @@ html {
     overflow-x: hidden;
 }
 
-header{
-    background-color: #5A7DEC;
-    width:100%;
-    height:10vh;
-    left: 0;
-    top:0;
-    clip-path: polygon(0 0, 100% 100%, 100% 0);
-}
-.profile header {
-    position: absolute;
-}
-
 body {
     line-height: 1;
 }
@@ -150,9 +138,8 @@ table {
 /* fonts source: fonts.google.com */
 /*font-family: 'Dosis', sans-serif;*/
 
-.explore {
-    font-family: 'Poppins', sans-serif;
-}
+
+
 
 /* standard mark-up */
 a {
@@ -164,6 +151,22 @@ a {
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 .material-icons {font-weight: bold;}
+
+header{
+    background-color: #5A7DEC;
+    width:100%;
+    height:10vh;
+    left: 0;
+    top:0;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+}
+.profile header {
+    position: absolute;
+}
+
+.explore {
+    font-family: 'Poppins', sans-serif;
+}
 
 .explore .logo{
     margin-left: 2.5em;
@@ -240,18 +243,18 @@ a {
     color: white;
 }
 
-.explore .like-button:active{
+/* .explore .like-button:active{
     color: #FF6A6A;
-}
+} */
 
 .explore .dislike-button{
     left: 10%;
     color: white;
 }
 
-.explore .dislike-button:active{
+/* .explore .dislike-button:active{
     color:black;
-}
+} */
 
 .explore .cards li section {
     position: absolute;
@@ -376,7 +379,7 @@ a {
 body.likes {
     width:100%;
     height:auto;
-    font-family: Dosis;
+    font-family: 'Dosis', sans-serif;
     padding:0; margin:0;
 }
 
@@ -494,9 +497,9 @@ body.profile {
     margin-bottom: 1em;
 }
 
-.profile form div:first-of-type label:first-of-type {
+/* .profile form div:first-of-type label:first-of-type {
     max-height: 4.925em;
-}
+} */
 
 .profile form div:first-of-type label p,
 .profile form div:first-of-type label img {
