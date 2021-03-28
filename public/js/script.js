@@ -25,9 +25,9 @@ function closeFilterScreen () {
 	filter.classList.remove('filters-show');
 }
 
+// profile page
 const inputFile = document.querySelector('input[type="file"]');
 const imgPreview = document.querySelector('form div:first-of-type label:first-of-type');
-
 
 if (inputFile){
 	inputFile.addEventListener('change', function () {
@@ -50,3 +50,20 @@ function previewImage() {
 	}
 }
 
+// likes page
+
+const likeContent = document.querySelector('#likes');
+const matchesContent = document.querySelector('#matches');
+
+if (likeContent) {
+	likeContent.addEventListener('click', function () {
+		likeContent.classList.add('like');
+		matchesContent.classList.remove('match');
+	});
+}
+if (matchesContent) {
+	matchesContent.addEventListener('click', function () {
+		likeContent.classList.remove('like');
+		matchesContent.classList.add('match');
+	});
+}

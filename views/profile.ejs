@@ -10,7 +10,7 @@
             <div>
                 <% if(personalDB) { %> 
                     <input type="file" id="image" name="image" value="image" accept="image/*">
-                    <label for="image"><img src="<%- personalDB.document.image %>" alt="profielfoto"></label>
+                    <label for="image"><img src="<%- personalDB.document.image %>" alt="profielfoto">+</label>
                     <label for="image">Change photo</label>
                 <% } else { %>
                     <input type="file" id="image" name="image" value="image" accept="image/*" required>
