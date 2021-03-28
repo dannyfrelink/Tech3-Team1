@@ -6,6 +6,7 @@ const countries = Object.values(countriesList.countries);
 const { ObjectID } = require('mongodb');
 /* eslint-disable-next-line no-unused-vars */
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 /* eslint-disable-next-line no-unused-vars */
@@ -66,6 +67,7 @@ const upload = multer({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(helmet());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
