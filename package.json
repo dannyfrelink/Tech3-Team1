@@ -8,7 +8,7 @@
     "npm": "7.5.1"
   },
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "say-hello": "echo How are you doing?"
   },
   "author": "Tristan Varewijck",
