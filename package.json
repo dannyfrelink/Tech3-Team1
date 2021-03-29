@@ -1,18 +1,8 @@
 {
-  "name": "matching-app",
+  "name": "tech3-team1",
   "version": "1.0.0",
-  "description": "Project for blok-tech",
+  "description": "Project for blok-tech.",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dannyfrelink/Tech3-Team1.git"
-  },
-  "author": "Tech3-Team1",
-  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "countries-list": "^2.6.1",
@@ -36,6 +26,16 @@
     "prettier": "2.2.1",
     "supertest": "^6.1.3"
   },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dannyfrelink/Tech3-Team1.git"
+  },
+  "author": "team1-tech3",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dannyfrelink/Tech3-Team1/issues"
   },
